@@ -1,0 +1,6 @@
+*.settings
+*.sfdx
+*.vscode
+force.json
+.DS_Store
+*.DS_Store
