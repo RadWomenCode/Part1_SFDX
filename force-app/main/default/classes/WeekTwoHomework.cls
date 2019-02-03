@@ -51,7 +51,7 @@ public with sharing class WeekTwoHomework {
 
         //3.  Print out your variables to the debug log
 
-        //4.  Declare an integer varable and assign a value in the same line
+        //4.  Declare an integer variable and assign a value in the same line
 
         //5.  Print out your integer to the debug log
 
@@ -125,21 +125,27 @@ public with sharing class WeekTwoHomework {
 
         /*Let's talk about indexing.  Lists are ordered and you can refer to the entries in a list by using their index
         The first item in a list or other collection is in the 0th position, the next is in position 1, then 2 etc.
-        Let's use a list of vegetables to demonstrate.
+        Let's use a list of first names to demonstrate.
         */
 
-        List<String> vegList = new List<String> { 'celery', 'onions', 'carrots' };
+        List<String> firstNames = new List<String> { 'Angelica', 'Mario', 'Luis' };
 
-        //Because celery is in the first position, it has an index of 0
-        System.debug('Value of 0 Index:' + vegList[0]);
+        //Because Angelica is in the first position, that entry has an index of 0
+        System.debug('Value of 0 Index:' + firstNames[0]);
 
         /*if you open up the execute anonymous option in the developer console, and run this method by typing in: BuildingBlocks.introToLists();
         the debug log will show celery.  The syntax used to reference by index number is as you see above,
         the name of the lists followed by square brackets and the number of the position you want to reference
         */
 
-        //Careful!  if you attempt to access a value that does not exist, you will get an error.
-        //If we tried to access fruitList[5] for example, we would get an error, since there is no 6th value in the list.
+        /*Careful!  if you attempt to access a value that does not exist, you will get an error.
+        And it's still ok!  Errors are a common and universal part of coding.  You might as well get used to it, so let's throw an error
+        Because the list below only has 3 entries, you can only directly reference the indexes at 0, 1, 2
+        When you try and get the value at the index 3 or higher, there is nothing there, and you get an error
+        paste the code below into an execute anonymous window and check out the error you get
+        */
+        List < String > cities = new List < String >{'Chicago', 'Los Angeles', 'Portland'};
+        String s = cities[3];
 
     }
 
@@ -148,7 +154,7 @@ public with sharing class WeekTwoHomework {
 
         //1.  Declare a list of Strings called myStringList
 
-        //2.  Add three strings to your list and print it out in the debug log
+        //2.  Add three string values to your list and print it out in the debug log
 
         //3.  Print out the third value in your list of strings using list indexing.
 

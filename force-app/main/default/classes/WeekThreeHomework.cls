@@ -33,7 +33,7 @@ public with sharing class WeekThreeHomework {
         Integer counter = 0;
 
         //while (counter < ??) {
-        counter++;  //without this line to increment counter, we'd have an infinite loop!
+            counter++;  //without this line to increment counter, we'd have an infinite loop!
         //}
 
         System.debug('Done with the loop, it ran: ' + counter + ' times.');

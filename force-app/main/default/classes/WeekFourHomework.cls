@@ -4,20 +4,22 @@ public with sharing class WeekFourHomework {
     //that call the existing methods you see already written here.  Ready?  Let's Go!
 
 
-    //Sample: Here is a public method that calls the getfavoriteColorsMethod below and prints the results to our debug log
-    public static void printOutFavoriteColorsDemo() {
-        List<String> favoriteColors = getFavoriteColors();
-        System.debug('Here are the favorite colors: ' + favoriteColors);
+    //Sample: Here is a public method that calls the getCitiesForExpansion below and prints the results to our debug log
+    public static void printOutCitiesForExpansionDemo() {
+        //The code on the left of the equals sign instantiates a list of Strings, the code on the right side calls our method and returns a list of cities
+        //the equals sign assigns the returrned vaule, to the list we created
+        List<String> cities = getCitiesForExpansion();
+        System.debug('Here are the cities: ' + cities);
     }
 
 
-    //1.  Write a public method that calls the getFavoriteColors method to get a list of favorite colors, then add
-    //another color to the list before printing it to the debug log.
+    //1.  Write a public method that calls the getCitiesForExpansion method to get a list of cities, then add
+    //another city to the list before printing it to the debug log.
     //(see the sample above for an example of calling that method-You can even start by copying and pasting that method here, renaming and modifying it)
 
 
-    //2.Write a public method that calls the amIFeelingGood and prints out the returned string to the debug log.
-    //You'll need to pass in a boolean variable as the argument!
+    //2.Write a public method that calls the isTopSalesCity method and prints out the returned boolean to the debug log.
+    //You'll need to pass in a string variable that is a city name as the argument!
 
 
     //3.  BONUS!!  If you've finished the first two, there's another private method below that will return the top 10 Accounts
@@ -25,24 +27,24 @@ public with sharing class WeekFourHomework {
 
 
     //no arguments taken, will return the same thing every time
-    private static List<String> getFavoriteColors() {
-        List<String> colorResponses = new List<String>();
+    private static List<String> getCitiesForExpansion() {
+        List<String> cities = new List<String>();
 
-        colorResponses.add('Red');
-        colorResponses.add('Yellow');
-        colorResponses.add('Blue');
+        cities.add('Tokyo');
+        cities.add('Melbourne');
+        cities.add('Portland');
 
         //this is the line that sends our final product out to whatever method called this one
-        return colorResponses;
+        return cities;
     }
 
 
-    //takes a boolean argument and returns a string, based on that input
-    private static String amIFeelingGood(Boolean feelingGood) {
-        if (feelingGood == true) {
-            return 'Heck Yes!  You are RAD!';
+    //takes a string argument and returns a boolean, based on that input
+    private static Boolean isTopSalesCity (String cityName) {
+        if (cityName=='Seattle' || cityName=='Los Angeles' || cityName=='Portland') {
+            return true;
         } else {
-            return 'Sorry to hear it.  Nothing like writing some code to cheer you up!!';
+            return false;
         }
     }
 

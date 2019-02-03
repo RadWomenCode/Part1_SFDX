@@ -33,7 +33,8 @@ public with sharing class WeekTwoClassExercises {
         < less than
         <= less than or equal to
         >= greater than or equal to
-        != not equal (evaluates whether the two values are NOT Equal)
+        != not equal (evaluates whether the two values are NOT Equal)  Sometimes you will see/hear the ! symbol called "bang"
+        for example, you could read the above as "bang equal" or "not equal"
 
         //Logical Operators allow you to build out the logic of complex comparisons
         && signifies AND
@@ -81,15 +82,15 @@ public with sharing class WeekTwoClassExercises {
         System.debug('Contents of listOfIntegers: ' + listOfIntegers);
 
         //Same idea with a list of strings
-        List<String> fruitList = new List<String>{
-            'apples', 'pears', 'oranges', 'pineapples'
+        List<String> firstNames = new List<String>{
+            'Stephanie', 'Pierre', 'Frank', 'Mary', 'Mario'
         };
-        System.debug('Contents of fruitList ' + fruitList);
+        System.debug('Contents of firstNames ' + firstNames);
 
         //As we saw in our reading, you can refer to the value of an item in a list by using its index, or the order in which it appears in the list
-        System.debug('Value of 0 Index:' + fruitList[0]);
+        System.debug('Value of 0 Index:' + firstNames[0]);
 
-        //Let's do one together!  Using System.debug, print out the value oranges
+        //Let's do one together!  Using System.debug, print out the value Frank by referencing its index
 
 
     }
