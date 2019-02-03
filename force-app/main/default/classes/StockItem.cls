@@ -31,6 +31,11 @@ public with sharing class StockItem {
 
     }
 
+    //Third Constructor, Instantiate empty StockItem
+    public StockItem() {
+
+    }
+
     //public methods
     public Boolean create() {
 
