@@ -23,6 +23,8 @@ public with sharing class WeekThreeClassExercises {
 
         //when we run this code, the new account will be saved to our database.
 
+        //If you have left off required fields, or cause any other error, the record will not be saved and you will see an error
+
     }
 
     public static void whileLoops() {
