@@ -72,7 +72,7 @@ public with sharing class WeekFiveClassExercises {
             System.debug('restaurantName: ' + restaurantName);
         }
 
-        //You'll see alot more of maps when we work on Triggers in the comming weeks!
+        //You'll see a lot more of maps when we work on Triggers in the comming weeks!
 
 
     }

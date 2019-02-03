@@ -6,7 +6,7 @@ public with sharing class ItemCollection {
 	public ItemCollection(List < Item > items) {
 		this.itemList = items;
 	}
-
+	
 	public void insertItemSobjects () {
 
 		//New list of Stock Item objects to be inserted 

@@ -13,7 +13,7 @@ private class PackageCoverageTests {
         a.Name = 'updated test';
         update a;
     }
-
+ 
     @isTest static void testMethodTwo() {
         Account a = new Account();
         a.Name = 'test';
