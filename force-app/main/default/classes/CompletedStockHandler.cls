@@ -1,7 +1,11 @@
-//A Utility class to process Stock Item records from the Stock Item Handler
+/**
+ * A Utility class to process Stock Item records from the Stock Item Handler
+ */
 public with sharing class CompletedStockHandler {
 
-    //Default Constructor
+    /**
+     * Class constructor.
+     */
     public CompletedStockHandler() {
 
     }
@@ -38,10 +42,10 @@ public with sharing class CompletedStockHandler {
 
             ////Alternative/Bonus:  Thrown an exception Scenario
             //for (Stock_Item__c item: newItems) {
-            //	if (matchedNames.contains(item.Item_Name__c)) {
-            //		//Since this is a before trigger. No DML required.
-            //		Throw new RadException('Duplicate Item!  Update the existing item or use a different Name.');
-            //	}
+            //    if (matchedNames.contains(item.Item_Name__c)) {
+            //        //Since this is a before trigger. No DML required.
+            //        Throw new RadException('Duplicate Item!  Update the existing item or use a different Name.');
+            //    }
             //}
 
         }

@@ -133,7 +133,7 @@ public with sharing class WeekTwoHomework {
         //Because Angelica is in the first position, that entry has an index of 0
         System.debug('Value of 0 Index:' + firstNames[0]);
 
-        /*if you open up the execute anonymous option in the developer console, and run this method by typing in: BuildingBlocks.introToLists();
+        /*if you open up the execute anonymous option in the developer console, and run this method by typing in: WeekTwoHomework.introToLists();
         the debug log will show celery.  The syntax used to reference by index number is as you see above,
         the name of the lists followed by square brackets and the number of the position you want to reference
         */
@@ -144,7 +144,7 @@ public with sharing class WeekTwoHomework {
         When you try and get the value at the index 3 or higher, there is nothing there, and you get an error
         paste the code below into an execute anonymous window and check out the error you get
         */
-        List < String > cities = new List < String >{'Chicago', 'Los Angeles', 'Portland'};
+        List<String> cities = new List<String>{'Chicago', 'Los Angeles', 'Portland'};
         String s = cities[3];
 
     }

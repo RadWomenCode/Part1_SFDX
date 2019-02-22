@@ -1,7 +1,8 @@
-//Important Note!!!!!!!
-//The below tests are simply to have enough coverage so that this package can be uploaded for class use.
-//These are not true tests and are not even close to proper test coverage.  Basically, pay no attention to these.
-
+/**
+ * Important Note!!!!!!!
+ * The below tests are simply to have enough coverage so that this package can be uploaded for class use.
+ * These are not true tests and are not even close to proper test coverage.  Basically, pay no attention to these.
+ */
 @isTest
 private class PackageCoverageTests {
 
@@ -38,9 +39,6 @@ private class PackageCoverageTests {
         WeekTwoHomework.conditionalsExercise();
         WeekTwoHomework.introToLists();
         WeekTwoHomework.listsExercise();
-        BuildingBlocks.introToPrimitives();
-        BuildingBlocks.introToLists();
-        BuildingBlocks.introToConditionals();
         Welcome.youDoThisPart();
 
     }
