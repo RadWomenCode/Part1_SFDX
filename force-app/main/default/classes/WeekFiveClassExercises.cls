@@ -38,8 +38,8 @@ public with sharing class WeekFiveClassExercises {
         //From your reading you know that they are key-value pairs.  So each key, which must be unique, 'maps' to a value.
         //Use a map when you want to be able to quickly get a value based on a key.  Let's look at an example.
 
-        //A map of the names of our restaurant customers, indexed by a custom ID number
-        //In this hypothetical, we're not using a Salesforce ID, just a fake ID stored as an integer.
+        //A map of the names of our restaurant customers, indexed by a custom Id number
+        //In this hypothetical, we're not using a Salesforce Id, just a fake Id stored as an integer.
         Map<Integer, String> restaurantsById = new Map<Integer, String>();
 
         //Let's add some entries in the format of: map.put(key, value)
@@ -63,11 +63,11 @@ public with sharing class WeekFiveClassExercises {
 
         //Ok, now one of the most common uses of a map is when you have a key but need to get the value.  For example
         //let's say we have a list of our ids, and need to fetch the restaurant name
-        //Let's make a list of IDs and then loop through, fetching the restaurant name.
+        //Let's make a list of Ids and then loop through, fetching the restaurant name.
         List<Integer> idList = new List<Integer>{ 1234, 6784, 89453 };
 
         for (Integer i : idList) {
-            //When we use the get method on a map, and pass in the ID, we get back the value which is associated with that ID
+            //When we use the get method on a map, and pass in the Id, we get back the value which is associated with that Id
             String restaurantName = restaurantsById.get(i);
             System.debug('restaurantName: ' + restaurantName);
         }

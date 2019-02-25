@@ -1,17 +1,17 @@
 public with sharing class ContactTriggerHandlerV3 {
 
-	//Has the Contact trigger already executed?
-	public static boolean hasExecuted = false;
+    //Has the Contact trigger already executed?
+    public static boolean hasExecuted = false;
 
-	//Variables to store Trigger.oldMap & Trigger.newMap
-	Map<ID, Contact> oldContactsMap;
-	Map<ID, Contact> newContactsMap;
+    //Variables to store Trigger.oldMap & Trigger.newMap
+    Map<Id, Contact> oldContactsMap;
+    Map<Id, Contact> newContactsMap;
 
 
-	public ContactTriggerHandlerV3(Map<ID, Contact> oldTriggerContacts, Map<ID, Contact> newTriggerContacts) {
-		oldContactsMap = oldTriggerContacts;
-		newContactsMap = newTriggerContacts;
-	}
+    public ContactTriggerHandlerV3(Map<Id, Contact> oldTriggerContacts, Map<Id, Contact> newTriggerContacts) {
+        oldContactsMap = oldTriggerContacts;
+        newContactsMap = newTriggerContacts;
+    }
 
     //Handler Methods
     public void onBeforeInsert() {

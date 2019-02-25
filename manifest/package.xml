@@ -25,6 +25,31 @@
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
+        <members>Account.Cuisine_Type__c</members>
+        <members>Account.Est_Annual_Sales__c</members>
+        <members>Account.Priority__c</members>
+        <members>Case.Staff_Email_Address__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Stock_Item__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Account-Account Layout.layout-meta.xml</members>
+        <members>Case-Case Layout.layout-meta.xml</members>
+        <members>Stock_Item__c-Stock Item Layout.layout-meta.xml</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <name>Profile</name>
+    </types>
+    <types>
         <members>*</members>
         <name>StaticResource</name>
     </types>

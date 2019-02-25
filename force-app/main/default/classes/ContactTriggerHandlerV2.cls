@@ -1,14 +1,14 @@
 public with sharing class ContactTriggerHandlerV2 {
 
-	//Variables to store Trigger.oldMap & Trigger.newMap
-	Map<ID, Contact> oldContactsMap;
-	Map<ID, Contact> newContactsMap;
+    //Variables to store Trigger.oldMap & Trigger.newMap
+    Map<Id, Contact> oldContactsMap;
+    Map<Id, Contact> newContactsMap;
 
-	//Constructor that takes in the map of old contact records and new/updated contact records and assigns them to class variables
-	public ContactTriggerHandlerV2(Map<ID, Contact> oldTriggerContacts, Map<ID, Contact> newTriggerContacts) {
-		oldContactsMap = oldTriggerContacts;
-		newContactsMap = newTriggerContacts;
-	}
+    //Constructor that takes in the map of old contact records and new/updated contact records and assigns them to class variables
+    public ContactTriggerHandlerV2(Map<Id, Contact> oldTriggerContacts, Map<Id, Contact> newTriggerContacts) {
+        oldContactsMap = oldTriggerContacts;
+        newContactsMap = newTriggerContacts;
+    }
 
     //Handler Methods
     public void onBeforeInsert() {

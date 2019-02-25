@@ -39,28 +39,28 @@ private class ContactHandler_Test {
         System.assertEquals(0, validateContact.Cases.size());
     }
 
-/*	@isTest
-	static void sampleFailingTestMethod() {
-		//Insert a contact WITH an account but no email and no cases and verify that no case is created(since there is an Account)
-		
-		Account a = new Account();
-		a.Name = 'Sample Account';
-		insert a;
+/*    @isTest
+    static void sampleFailingTestMethod() {
+        //Insert a contact WITH an account but no email and no cases and verify that no case is created(since there is an Account)
+        
+        Account a = new Account();
+        a.Name = 'Sample Account';
+        insert a;
 
-		Contact c = new contact();
-		c.AccountId = a.Id;
-		c.FirstName = 'Sample';
-		c.LastName = 'Contact';
-		insert c;
+        Contact c = new contact();
+        c.AccountId = a.Id;
+        c.FirstName = 'Sample';
+        c.LastName = 'Contact';
+        insert c;
 
-		c.LastName ='UpdatedLastName';
-		update c;
+        c.LastName ='UpdatedLastName';
+        update c;
 
-		//Select the contact with cases, there should be none
-		Contact validateContact = [SELECT Id, (SELECT Id FROM Cases) FROM Contact WHERE Id = :c.Id];
+        //Select the contact with cases, there should be none
+        Contact validateContact = [SELECT Id, (SELECT Id FROM Cases) FROM Contact WHERE Id = :c.Id];
 
-		//The expected condition comes first, then the condition you're testing
-		System.assertEquals(1, validateContact.cases.size());
+        //The expected condition comes first, then the condition you're testing
+        System.assertEquals(1, validateContact.cases.size());
 
-	}*/
+    }*/
 }

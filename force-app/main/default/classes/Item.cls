@@ -7,7 +7,9 @@ public with sharing class Item {
     public String description;
     public Integer minimumStockNeeded;
 
-    //Constructor: Used when initializing the class, sets values for our Item object
+    /**
+     * Class constructor specifying the price, name, description and minumum stock level for the item.
+     */
     public Item(Decimal price, String itemName, String itemDescription, Integer minStock) {
         //set class variables
         listPrice = price;
@@ -17,7 +19,9 @@ public with sharing class Item {
 
     }
 
-    //Inserts a corresponding Stock_Item__c object in our database
+    /**
+     * Inserts a corresponding Stock_Item__c object in our database.
+     */
     public void insertItemSObject () {
         Stock_Item__c  stockItem = new Stock_Item__c();
         stockItem.Item_Name__c = this.name;
