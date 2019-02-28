@@ -1,17 +1,5 @@
 # SFDX  App
 
-<<<<<<< HEAD
-## Dev, Build and Test
-
-
-## Resources
-
-
-## Description of Files and Directories
-
-
-## Issues
-=======
 ## About
 Welcome! This Repo is the code base for RAD Women Part I, a ten-week course that introduces the basics of coding on the Salesforce Platform.  It contains class files with demonstration code, class exercises and homework that complements the other curriculum materials.  This code is dependent on the data model distributed with the RAD Women managed package.  If you don't have access to that package or need to install an updated version, you can reach us at apexradwomen@gmail.com
 
@@ -31,6 +19,4 @@ While we welcome bug reports and refinements in all areas, we are particularly i
 
 ## Rights
 All Content is the property of RAD Women and is provided for the express purpose of curriculum improvement submissions.  Please contact us at apexradwomen@gmail.com before using or distributing any portion of this or other RAD materials.
->>>>>>> 495c781982366d1a36c21fdd318eb5251088b792
-
 
