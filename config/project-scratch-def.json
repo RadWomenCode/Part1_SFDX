@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-    "orgName": "mprcic Company",
-    "edition": "Developer",
-    "orgPreferences" : {
-        "enabled": ["S1DesktopEnabled"]
-    }
-}
-=======
     "orgName": "melissa Company",
     "edition": "Developer",
     "orgPreferences" : {
@@ -18,4 +10,3 @@
           ]
     }
 }
->>>>>>> 495c781982366d1a36c21fdd318eb5251088b792

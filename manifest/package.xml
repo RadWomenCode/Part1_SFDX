@@ -39,10 +39,10 @@
         <members>*</members>
         <name>CustomTab</name>
     </types>
-    <types>
-        <members>Account-Account Layout.layout-meta.xml</members>
-        <members>Case-Case Layout.layout-meta.xml</members>
-        <members>Stock_Item__c-Stock Item Layout.layout-meta.xml</members>
+     <types>
+        <members>Account-Account Layout</members>
+        <members>Case-Case Layout</members>
+        <members>Stock_Item__c-Stock Item Layout</members>
         <name>Layout</name>
     </types>
     <types>

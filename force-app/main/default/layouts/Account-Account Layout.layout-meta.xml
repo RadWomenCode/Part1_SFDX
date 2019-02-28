@@ -43,7 +43,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-<<<<<<< HEAD
                 <field>Cuisine_Type__c</field>
             </layoutItems>
             <layoutItems>
@@ -53,17 +52,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Priority__c</field>
-=======
-                <field>Priority__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Cuisine_Type__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Est_Annual_Sales__c</field>
->>>>>>> 495c781982366d1a36c21fdd318eb5251088b792
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -126,16 +114,12 @@
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>
         <label>Additional Information</label>
-<<<<<<< HEAD
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>NumberofLocations__c</field>
             </layoutItems>
         </layoutColumns>
-=======
-        <layoutColumns/>
->>>>>>> 495c781982366d1a36c21fdd318eb5251088b792
         <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -175,15 +159,11 @@
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
-<<<<<<< HEAD
         <layoutColumns>
             <layoutItems>
                 <customLink>Billing</customLink>
             </layoutItems>
         </layoutColumns>
-=======
-        <layoutColumns/>
->>>>>>> 495c781982366d1a36c21fdd318eb5251088b792
         <layoutColumns/>
         <layoutColumns/>
         <style>CustomLinks</style>
@@ -217,12 +197,6 @@
             <quickActionName>NewEvent</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-<<<<<<< HEAD
-=======
-            <quickActionName>FeedItem.RypplePost</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
->>>>>>> 495c781982366d1a36c21fdd318eb5251088b792
             <quickActionName>FeedItem.LinkPost</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
