@@ -1,8 +1,10 @@
-//The first line of our trigger gives the Trigger's name (AccountTrigger), names the object (Account) and lists the trigger_events that will cause the code below to execute
-//For example, "before insert" indicates that before an account record (or records) is inserted,  the trigger will be called.
+//We're calling this 'BadAccountTrigger' because this trigger has business logic directly coded in the trigger file. It's also using
+//way more parameters (on line 6) than it actually uses in the trigger itself. Both of these are considered bad practice. 
+//Business logic coded directly in a trigger and having extra stuff in your code both make the code hard to read and hard to maintain.  
+//The 'GoodAccountTrigger' shows how to use a handler class with your trigger and is much simpler to read. 
 //For more information on trigger syntax: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_syntax.htm
 
-trigger AccountTrigger on Account (before insert, before update, before delete, after insert, after update, after delete, after undelete) {
+trigger AccountTriggerBad on Account (before insert, before update, before delete, after insert, after update, after delete, after undelete) {
 
     //Each section of code below handles a different event & timing combination.  For now, we are demonstrating a trigger that has all of the logic right here.
     //Later on we'll be looking at other ways of handling Trigger events using handler classes, but for now, we want to keep all the logic in once place as
