@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+<<<<<<< HEAD
     <classAccesses>
         <apexClass>BuildingBlocks</apexClass>
         <enabled>true</enabled>
@@ -128,6 +129,8 @@
         <apexClass>packageTestCoverage</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+=======
+>>>>>>> 495c781982366d1a36c21fdd318eb5251088b792
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
@@ -183,6 +186,7 @@
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+<<<<<<< HEAD
         <layout>Asset-Asset Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -326,6 +330,10 @@
     <layoutAssignments>
         <layout>WorkPerformanceCycle-Performance Cycle Layout - Winter %2716</layout>
     </layoutAssignments>
+=======
+        <layout>Stock_Item__c-Stock Item Layout</layout>
+    </layoutAssignments>
+>>>>>>> 495c781982366d1a36c21fdd318eb5251088b792
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -335,6 +343,7 @@
         <object>Stock_Item__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+<<<<<<< HEAD
     <pageAccesses>
         <apexPage>SampleAccountForm</apexPage>
         <enabled>true</enabled>
@@ -347,10 +356,13 @@
         <tab>SampleExtensionPage</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
+=======
+>>>>>>> 495c781982366d1a36c21fdd318eb5251088b792
     <tabVisibilities>
         <tab>Stock_Item__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
+<<<<<<< HEAD
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
@@ -984,4 +996,6 @@
         <enabled>true</enabled>
         <name>WorkCalibrationUser</name>
     </userPermissions>
+=======
+>>>>>>> 495c781982366d1a36c21fdd318eb5251088b792
 </Profile>

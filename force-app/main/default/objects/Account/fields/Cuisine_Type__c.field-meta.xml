@@ -15,6 +15,7 @@
                 <default>false</default>
                 <label>Thai Street Food</label>
             </value>
+<<<<<<< HEAD
             <value>
                 <fullName>Chinese</fullName>
                 <default>false</default>
@@ -51,6 +52,8 @@
                 <isActive>false</isActive>
                 <label>Traditional American</label>
             </value>
+=======
+>>>>>>> 495c781982366d1a36c21fdd318eb5251088b792
         </valueSetDefinition>
     </valueSet>
 </CustomField>
