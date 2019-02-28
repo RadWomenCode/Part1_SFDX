@@ -40,13 +40,9 @@
         <name>CustomTab</name>
     </types>
     <types>
-<<<<<<< HEAD
-        <members>*</members>
-=======
         <members>Account-Account Layout.layout-meta.xml</members>
         <members>Case-Case Layout.layout-meta.xml</members>
         <members>Stock_Item__c-Stock Item Layout.layout-meta.xml</members>
->>>>>>> 495c781982366d1a36c21fdd318eb5251088b792
         <name>Layout</name>
     </types>
     <types>
