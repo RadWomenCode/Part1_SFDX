@@ -39,7 +39,7 @@
         <members>*</members>
         <name>CustomTab</name>
     </types>
-     <types>
+    <types>
         <members>Account-Account Layout</members>
         <members>Case-Case Layout</members>
         <members>Stock_Item__c-Stock Item Layout</members>
@@ -53,5 +53,5 @@
         <members>*</members>
         <name>StaticResource</name>
     </types>
-    <version>45.0</version>
+    <version>44.0</version>
 </Package>
