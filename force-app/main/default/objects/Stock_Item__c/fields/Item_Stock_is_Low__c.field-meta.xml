@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Stock_is_Low__c</fullName>
+    <description>True if the stock on hand is less than or equal to the Minimum stock level OR if either of those fields is empty.</description>
+    <externalId>false</externalId>
+    <formula>Stock_on_Hand__c &lt;=  Minimum_Stock_Level__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>TRUE if the stock on hand is less than or equal to the Minimum stock level OR if either of those fields is empty.</inlineHelpText>
+    <label>Item Stock is Low</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
