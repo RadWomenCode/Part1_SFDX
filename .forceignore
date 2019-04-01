@@ -2,11 +2,11 @@
 # More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
 #
 
-<<<<<<< HEAD
 package.xml
-**/jsconfig.json
 
+# LWC configuration files
+**/jsconfig.json
 **/.eslintrc.json
-=======
-package.xml
->>>>>>> 495c781982366d1a36c21fdd318eb5251088b792
+
+# LWC Jest
+**/__tests__/**
