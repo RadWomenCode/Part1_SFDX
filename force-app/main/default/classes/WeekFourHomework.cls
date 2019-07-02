@@ -5,16 +5,11 @@ public with sharing class WeekFourHomework {
 
 
     //Sample: Here is a public method that calls the getCitiesForExpansion below and prints the results to our debug log
-    public static List < String > printOutCitiesForExpansionDemo(String cityToAdd) {
+    public static void printOutCitiesForExpansionDemo() {
         //The code on the left of the equals sign instantiates a list of Strings, the code on the right side calls our method and returns a list of cities
-        //the equals sign assigns the returrned vaule, to the list we created
+        //the equals sign assigns the returned value, to the list we created
         List<String> cities = getCitiesForExpansion();
-        //add a city to the list 
         System.debug('Here are the cities: ' + cities);
-        cities.add(cityToAdd);
-        
-        return cities;
-        
     }
 
 
