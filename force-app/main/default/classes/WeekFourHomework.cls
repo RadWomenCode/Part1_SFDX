@@ -5,11 +5,16 @@ public with sharing class WeekFourHomework {
 
 
     //Sample: Here is a public method that calls the getCitiesForExpansion below and prints the results to our debug log
-    public static void printOutCitiesForExpansionDemo() {
+    public static List < String > printOutCitiesForExpansionDemo(String cityToAdd) {
         //The code on the left of the equals sign instantiates a list of Strings, the code on the right side calls our method and returns a list of cities
         //the equals sign assigns the returrned vaule, to the list we created
         List<String> cities = getCitiesForExpansion();
+        //add a city to the list 
         System.debug('Here are the cities: ' + cities);
+        cities.add(cityToAdd);
+        
+        return cities;
+        
     }
 
 
@@ -22,12 +27,12 @@ public with sharing class WeekFourHomework {
     //You'll need to pass in a string variable that is a city name as the argument!
 
 
-    //3.  BONUS!!  If you've finished the first two, there's another private method below that will return the top 10 Accounts
+    //3.  BONUS!!  If you've finished the first two, there's another public method below that will return the top 10 Accounts
     //Write a public method that calls getTopTenAccounts.  Can you loop through those accounts and change the name of those accounts with a DML Update?
 
 
     //no arguments taken, will return the same thing every time
-    private static List<String> getCitiesForExpansion() {
+    public static List<String> getCitiesForExpansion() {
         List<String> cities = new List<String>();
 
         cities.add('Tokyo');
@@ -40,7 +45,7 @@ public with sharing class WeekFourHomework {
 
 
     //takes a string argument and returns a boolean, based on that input
-    private static Boolean isTopSalesCity (String cityName) {
+    public static Boolean isTopSalesCity (String cityName) {
         if (cityName=='Seattle' || cityName=='Los Angeles' || cityName=='Portland') {
             return true;
         } else {
@@ -52,7 +57,7 @@ public with sharing class WeekFourHomework {
     //This method will give you the top ten account records, based on Annual Revenue
     //You don't need to know exactly how the method you're calling works, we'll cover SOQL queries later, but take a look and you'll likely get the gist
     //What's important to know is that when called it will return a list of top Accounts based on revenue, returning no more than 10.
-    private static List<Account> getTopTenAccounts() {
+    public static List<Account> getTopTenAccounts() {
 
         List<Account> topAccounts =
             [SELECT Id, Name, AnnualRevenue FROM Account WHERE AnnualRevenue != NULL AND AnnualRevenue != 0

@@ -10,7 +10,7 @@ public with sharing class CompletedStockHandler {
 
     }
 
-    public void onBeforeInsert(List<Stock_Item__c> newItems) {
+    public static void onBeforeInsert(List<Stock_Item__c> newItems) {
 
         //If an item is being entered with a name that matches an existing item, it's a potential duplicate.  Update the name to indicate this
 

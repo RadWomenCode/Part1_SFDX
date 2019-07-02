@@ -1,5 +1,5 @@
 //We're calling this 'BadAccountTrigger' because this trigger has business logic directly coded in the trigger file. It's also using
-//way more parameters (on line 6) than it actually uses in the trigger itself. Both of these are considered bad practice. 
+//way more parameters (on line 7) than it actually uses in the trigger itself. Both of these are considered bad practice. 
 //Business logic coded directly in a trigger and having extra stuff in your code both make the code hard to read and hard to maintain.  
 //The 'GoodAccountTrigger' shows how to use a handler class with your trigger and is much simpler to read. 
 //For more information on trigger syntax: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_syntax.htm
@@ -11,6 +11,7 @@ trigger AccountTriggerBad on Account (before insert, before update, before delet
     //we're learning.
 
     //Before an account record is inserted, we want to classify them according to estimated annual sales
+    /*
     if (Trigger.isInsert && Trigger.isBefore) {
 
         for (Account a : Trigger.new) {
@@ -32,20 +33,31 @@ trigger AccountTriggerBad on Account (before insert, before update, before delet
     else if (Trigger.isInsert && Trigger.isAfter) {
         //Week 7 Homework:  Properly bulkify this code:
         Id runningUserId = UserInfo.getUserId();
+        
+        //Get the email address for the Account owner
+        User u = [SELECT Id, Email FROM User WHERE Id = :runningUserId];
+        
+        List < Case > casesToInsert = new List < Case >();
 
         for (Account a : Trigger.new) {
-            Case c = new Case();
-            c.Status = 'New';
-            c.Origin = 'New Account'; //Make sure you've added this as a picklist value for this field
-            c.Subject = 'Send Welcome Package';
-            c.AccountId = a.Id;
-            c.Description = 'Please follow up with this new Account and send them a Welcome Package.';
-
-            //Get the email address for the Account owner
-            User u = [SELECT Id, Email FROM User WHERE Id = :runningUserId];
-            c.Staff_Email_Address__c = u.Email;
-            insert c;
+            if (a.Priority__c == 'Hot') {
+                Case c = new Case();
+                c.Status = 'New';
+                c.Origin = 'New Account'; //Make sure you've added this as a picklist value for this field
+                c.Subject = 'Send Welcome Package';
+                c.AccountId = a.Id;
+                c.Description = 'Please follow up with this new Account and send them a Welcome Package.';            
+                c.Staff_Email_Address__c = u.Email;
+                casesToInsert.add(c);
+            }
+            
         }
+        
+        if (casesToInsert.size()>0) {
+           insert casesToInsert; 
+        }
+        
+        
     } else if (Trigger.isUpdate && Trigger.isBefore) {
         //no action needed on Before Update
     }
@@ -101,5 +113,5 @@ trigger AccountTriggerBad on Account (before insert, before update, before delet
         //no action needed on After Delete
     } else if (Trigger.isUndelete) {
         //no action needed on Undelete
-    }
+    } */
 }

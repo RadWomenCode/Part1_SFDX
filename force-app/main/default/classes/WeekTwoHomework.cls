@@ -142,10 +142,11 @@ public with sharing class WeekTwoHomework {
         And it's still ok!  Errors are a common and universal part of coding.  You might as well get used to it, so let's throw an error
         Because the list below only has 3 entries, you can only directly reference the indexes at 0, 1, 2
         When you try and get the value at the index 3 or higher, there is nothing there, and you get an error
-        paste the code below into an execute anonymous window and check out the error you get
+        paste the code below into an execute anonymous window, uncomment out the line that declares a new string and check out the error you get
         */
         List<String> cities = new List<String>{'Chicago', 'Los Angeles', 'Portland'};
-        String s = cities[3];
+        //Uncomment out the line below to try throwing the error
+        //String s = cities[3];
 
     }
 
