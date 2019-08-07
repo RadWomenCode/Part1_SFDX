@@ -17,9 +17,9 @@ public with sharing class WeekFiveHomework {
 
 
 
-        // 2.  Bonus Points!  Check out the documentation on Sets. Go to the section titled List Methods. Pick one of the methods to try out and print the results to the debug log.  
+        // 2.  Bonus Points!  Check out the documentation on Sets. Go to the section titled Set Methods. Pick one of the methods to try out and print the results to the debug log.  
         // Documentation: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_set.htm
-        //Hint:  can you print out if the set is empty?  Can you clone it?
+        //Hint:  can you print out a boolean that indicates if the set is empty?  Can you clone it?
 
 
     }

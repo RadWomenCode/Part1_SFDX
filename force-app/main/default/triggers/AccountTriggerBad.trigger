@@ -1,5 +1,5 @@
 //We're calling this 'BadAccountTrigger' because this trigger has business logic directly coded in the trigger file. It's also using
-//way more parameters (on line 6) than it actually uses in the trigger itself. Both of these are considered bad practice. 
+//way more parameters (on line 7) than it actually uses in the trigger itself. Both of these are considered bad practice. 
 //Business logic coded directly in a trigger and having extra stuff in your code both make the code hard to read and hard to maintain.  
 //The 'GoodAccountTrigger' shows how to use a handler class with your trigger and is much simpler to read. 
 //For more information on trigger syntax: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_syntax.htm
