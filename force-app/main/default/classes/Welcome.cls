@@ -20,10 +20,16 @@ public with sharing class Welcome {
     // Test Comment Added
 
     public static void youDoThisPart() {
-        /*Your assignment is to write two comments below this one.  They can say whatever you like.  
+        /*Your assignment is to write two comments below this one.  They should describe the few lines of code you se below.
+		Simply describe what the code is doing based on what you learned from readings and in class.
         Make one as a single line comment using the // notation.  Make the other one a multi line comment using the /* notation.
         When you're done, save this file so that it is compiled and stored in Salesforce.  */
 
+		Integer i;
+
+		i = 2;
+
+		String s = 'My String';
 
     }
 }
