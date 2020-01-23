@@ -1,6 +1,7 @@
 public with sharing class WeekFiveHomework {
     
-
+	// Remember Sets & Maps??  We did a little practice with Lists in week 2, but we need to make sure we know how to use Sets & Maps as well!!
+	
     public static void setsReview(){
 
         //Your assignment: Play with Sets!

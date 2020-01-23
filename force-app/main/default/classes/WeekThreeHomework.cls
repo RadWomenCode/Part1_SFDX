@@ -2,7 +2,7 @@ public with sharing class WeekThreeHomework {
 
 
     public static void homeworkAssignmentMethod() {
-        //Read through the set-up below and then complete the code following the prompts.  When you're done, make sure to compile (save) your work
+        //Read through the setup below and then complete the code following the prompts.  When you're done, make sure to compile (save) your work
         //Open Execute Anonymous in the Developer Console and execute your code by typing in: WeekThreeHomework.homeworkAssignmentMethod();
         //Read through the debug statements to make sure you're done your work correctly.
 
@@ -39,4 +39,34 @@ public with sharing class WeekThreeHomework {
         System.debug('Done with the loop, it ran: ' + counter + ' times.');
 
     }
+
+	public static void forLoopsExercise() {
+
+		//1. Let's review iterating over a list of stuff.  How about Strings?
+
+		List < String > myStringList = new List < String >{'red', 'yellow', 'green', 'blue'};
+
+		// using for loop syntax, loop over the list of strings, printing each one out to the debug log.
+
+
+
+		// 2. How about some SObjects?
+
+		// I'll do the data setup here to create a list of contacts that all have a first name:
+		Contact c1 = new Contact(FirstName='Sam');
+		Contact c2 = new Contact(FirstName='Diane');
+		Contact c3 = new Contact(FirstName='Coach');
+		List < Contact > myContacts = new List < Contact >{c1,c2,c3};
+
+		// Your turn!  Using a for loop, print out the first name of each contact on a different line
+		//hint, you will need to use dot notation!
+
+
+
+
+
+		//Bonus question to ponder: Do these contacts actually exist in our database?
+		//What would it take to get them there?
+
+	}
 }
