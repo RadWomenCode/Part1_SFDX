@@ -27,43 +27,7 @@ public with sharing class WeekThreeClassExercises {
 
     }
 
-    public static void whileLoops() {
 
-        //As you have read, a while loop allows you to execute the same code over and over while some condition is true.
-        //Let's create a simple while loop that let's us add multiple account records to our datbase
-
-
-        //First we need an integer variable which will be a counter that we use to keep track of our loops.  start it at 0
-        Integer counter = 0;
-
-        //we also need a list to put our new accounts in so that we can insert them via DML at the end
-        List<Account> newAccounts = new List<Account>();  //Yep, you can have lists of SObjects just like primitives
-
-        while (counter < 5) {
-            //create an account, using the counter to give it a unique name for this execution
-            System.debug('Counter Value before Incrementing ' + counter);
-
-            Account a = new Account();
-            a.Name = 'New Prospect ' + counter;
-            a.Type = 'Prospect';
-            newAccounts.add(a);  //we add our newly created account to the list we made above
-
-            //increment our counter each time we go through the loop.  Without this we'd have an infinite loop!!!
-            counter = counter + 1; //adds one to the current counter value
-            System.debug('counter Value after incrementing ' + counter);
-        }
-
-        //Ok, when the loop is done, we can expect to have a list of 5 accounts, since we started the counter at 0
-        // and incremented the counter each time and stopped once the counter was 5
-
-        System.debug('Size of our Account List:' + newAccounts.size());
-
-        //And finally we insert the whole list
-        insert newAccounts;
-
-        //All done!  You can search for and find these accounts in your salesforce org after running this method.
-
-    }
 
     public static void conditionals() {
         //continuing on from last week, conditional statements, or control statements, utilize the comparison and logical operators
@@ -104,6 +68,59 @@ public with sharing class WeekThreeClassExercises {
         System.debug('CanCheckOut after Items A & B &C :' + canCheckOut);
 
         //Let's execute this code and look at the debugging statements from above
+
+    }
+
+
+	public static void whileLoops() {
+
+        //As you have read, a while loop allows you to execute the same code over and over while some condition is true.
+        //Let's create a simple while loop that let's us add multiple account records to our datbase
+
+
+        //First we need an integer variable which will be a counter that we use to keep track of our loops.  start it at 0
+        Integer counter = 0;
+
+        //we also need a list to put our new accounts in so that we can insert them via DML at the end
+        List<Account> newAccounts = new List<Account>();  //Yep, you can have lists of SObjects just like primitives
+
+        while (counter < 5) {
+            //create an account, using the counter to give it a unique name for this execution
+            System.debug('Counter Value before Incrementing ' + counter);
+
+            Account a = new Account();
+            a.Name = 'New Prospect ' + counter;
+            a.Type = 'Prospect';
+            newAccounts.add(a);  //we add our newly created account to the list we made above
+
+            //increment our counter each time we go through the loop.  Without this we'd have an infinite loop!!!
+            counter = counter + 1; //adds one to the current counter value
+            System.debug('counter Value after incrementing ' + counter);
+        }
+
+        //Ok, when the loop is done, we can expect to have a list of 5 accounts, since we started the counter at 0
+        // and incremented the counter each time and stopped once the counter was 5
+
+        System.debug('Size of our Account List:' + newAccounts.size());
+
+        //And finally we insert the whole list
+        insert newAccounts;
+
+        //All done!  You can search for and find these accounts in your salesforce org after running this method.
+
+    }
+
+	//Let's look at another way to loop through a list
+    public static void loopingThroughLists() {
+        //Let's get ourselves a list of open Opportunities.  10 Max
+
+		// This is a SOQL query to recieve records from Salesforce.  We'll be covering these soon!!
+        List<Opportunity> tenOpenOpps = [SELECT Id, Name, Amount FROM Opportunity WHERE IsClosed = false LIMIT 10];
+
+        //Let's look at how we can iterate, or loop through this list and inspect or interact with each of the accounts
+        for (Opportunity o : tenOpenOpps) {
+            System.debug('Opp in our loop : ' + o.Name);
+        }
 
 
     }

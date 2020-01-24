@@ -43,32 +43,6 @@ public with sharing class WeekSixClassExercises {
     }
 
 
-    //Let's look at another way to loop through a list
-    public static void loopingThroughLists() {
-        //Let's get ourselves a list of open Opportunities.  10 Max
-
-        List<Opportunity> tenOpenOpps = [SELECT Id, Name, Amount FROM Opportunity WHERE IsClosed = false LIMIT 10];
-
-        //now you already know that we can loop through using this syntax:
-        for (Opportunity o : tenOpenOpps) {
-            System.debug('Opp in our loop Version 1: ' + o.Name);
-        }
-
-        //But we can also use the new syntax we just learned, using the size of the list to know how many loops we need.
-        Integer listSize = tenOpenOpps.size();
-        System.debug('*************************************************And Now for the same loop with different Syntax:');
-        for (Integer i = 0; i < listSize; i++) {
-            //Note that since we're usng this format, we use indexing to get values from each opportunity,
-            //Using the tenOpenOpps list and the current value of i as the index
-            System.debug('Opp in our loop Version 2: ' + tenOpenOpps[i].Name);
-        }
-
-        //Execute this method in Anonymous and you'll see that the loops are exactly the same.
-
-
-    }
-
-
     //Let's look at the new For loop syntax we learned.  There are times when you might not know how many times you need to do something
     //in advance.  This is the perfect tool for those scenarios
     public static void createOppsForHotAccounts(Integer hotAccountLimit, Integer numberOfOpps) {

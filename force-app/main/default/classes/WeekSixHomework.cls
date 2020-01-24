@@ -47,7 +47,7 @@ public with sharing class WeekSixHomework {
         //2.  Below is a loop that iterates through a list.  Can you change it to use the new For Loop syntax?  It should print out
         //each account name in the debug log when you're done.
         //Use the list size to tell you how many loops, and use indexing to fetch values.  If you need help, check the
-        //loopingThroughLists method in WeekSixClassExercises for hints
+        //loopingThroughLists method in WeekThree for hints
 
         List<Account> accountList = [SELECT Id, Name FROM Account LIMIT 5];
 

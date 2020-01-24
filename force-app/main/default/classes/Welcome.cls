@@ -17,8 +17,6 @@ public with sharing class Welcome {
 
     //Ok, let's get started!
 
-    // Test Comment Added
-
     public static void youDoThisPart() {
         /*Your assignment is to write two comments below this one.  They should describe the few lines of code you se below.
 		Simply describe what the code is doing based on what you learned from readings and in class.
@@ -32,4 +30,14 @@ public with sharing class Welcome {
 		String s = 'My String';
 
     }
+
+	public static void letsTalkAboutIndents() {
+        //As you look through the sample code in this org, and other places, you'll probably notice it looks pretty tidy
+        //That is the magic of indenting.  Through simply keeping logical groupings indented the same number of spaces
+        //and then indenting sub-sections further, you always know what section you're in
+
+        //Take a look at different classes in the sample code for this org, and even if you're not quite sure what it's doing yet
+        //you should see that the indenting makes logical groupings easier.
+    }
+
 }
