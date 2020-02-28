@@ -78,7 +78,7 @@ public with sharing class WeekTwoHomework {
         System.debug('Value of 0 Index:' + firstNames[0]);
 
         /*if you open up the execute anonymous option in the developer console, and run this method by typing in: WeekTwoHomework.introToLists();
-        the debug log will show celery.  The syntax used to reference by index number is as you see above,
+        the debug log will show Angelica.  The syntax used to reference by index number is as you see above,
         the name of the lists followed by square brackets and the number of the position you want to reference
         */
 
