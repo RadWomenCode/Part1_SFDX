@@ -28,13 +28,13 @@ private class PackageCoverageTests {
         insert o;
     }
 
-    @isTest static void weekTwoTests() {
+    @isTest static void weekOneAdTwoTests() {
 
-        WeekTwoClassExercises.talkingAboutPrimitives();
+        WeekOneClassExercises.talkingAboutPrimitives();
         WeekTwoClassExercises.comparisonAndLogicalOperators();
         WeekTwoClassExercises.introToLists();
-        WeekTwoHomework.introToPrimitives();
-        WeekTwoHomework.primitivesExercise();
+        WeekOneHomework.introToPrimitives();
+        WeekOneHomework.primitivesExercise();
         WeekTwoHomework.introToConditionals();
         WeekTwoHomework.conditionalsExercise();
         WeekTwoHomework.introToLists();
@@ -69,13 +69,13 @@ private class PackageCoverageTests {
         WeekFourHomework.getTopTenAccounts();
     }
 
-    @isTest static void weekFiveTests() {
+    @isTest static void weekTwoandSixTests() {
 
-        WeekFiveClassExercises.allAboutSets();
-        WeekFiveClassExercises.muchAdoAboutMaps();
-        WeekFiveHomework.setsReview();
-        WeekFiveHomework.listsReview();
-        WeekFiveHomework.mapsReview();
+        WeekTwoClassExercises.allAboutSets();
+        WeekTwoClassExercises.muchAdoAboutMaps();
+        WeekSixHomework.setsReview();
+        WeekSixHomework.listsReview();
+        WeekSixHomework.mapsReview();
 
     }
 
@@ -87,18 +87,18 @@ private class PackageCoverageTests {
         a.Rating = 'Hot';
         insert a;
 
-        WeekSixClassExercises.getHotAccounts(2);
-        WeekSixClassExercises.getOpenOppsForHotAccounts();
-        WeekSixClassExercises.loopingThroughLists();
-        WeekSixClassExercises.createOppsForHotAccounts(2, 2);
-        WeekSixHomework.soqlPractice();
-        WeekSixHomework.forTheLoveOfForLoops();
+        WeekSevenClassExercises.getHotAccounts(2);
+        WeekSevenClassExercises.getOpenOppsForHotAccounts();
+        WeekThreeClassExercises.loopingThroughLists();
+        WeekSevenClassExercises.createOppsForHotAccounts(2, 2);
+        WeekSevenHomework.soqlPractice();
+        WeekSevenHomework.forTheLoveOfForLoops();
 
     }
 
     @isTest static void weekEightTests() {
 
-        WeekEightHomework.createSampleAccounts(2);
+        WeekFiveHomework.createSampleAccounts(2);
 
     }
 
