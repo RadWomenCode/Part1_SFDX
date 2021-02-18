@@ -1,6 +1,6 @@
-public inherited sharing class WeekSevenClassExercises {
+public with sharing class WeekSevenClassExercises {
 
-    
+
     public static List<Account> getHotAccounts(Integer numberOfAccounts) {
 
         //In this piece of sample code, we want to return the number of Hot accounts requested.
