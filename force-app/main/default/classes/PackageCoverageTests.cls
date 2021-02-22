@@ -28,18 +28,26 @@ private class PackageCoverageTests {
         insert o;
     }
 
-    @isTest static void weekTwoTests() {
+    @isTest static void weekOneTests() {
 
-        WeekTwoClassExercises.talkingAboutPrimitives();
+        WeekOneClassExercises.talkingAboutPrimitives();
+        WeekOneHomework.introToPrimitives();
+        WeekOneHomework.primitivesExercise();
+        Welcome.youDoThisPart();
+
+    }
+
+    
+    @isTest static void weekTwoTests() {
+       
         WeekTwoClassExercises.comparisonAndLogicalOperators();
         WeekTwoClassExercises.introToLists();
-        WeekTwoHomework.introToPrimitives();
-        WeekTwoHomework.primitivesExercise();
+        WeekTwoClassExercises.allAboutSets();
+        WeekTwoClassExercises.muchAdoAboutMaps();
         WeekTwoHomework.introToConditionals();
         WeekTwoHomework.conditionalsExercise();
         WeekTwoHomework.introToLists();
         WeekTwoHomework.listsExercise();
-        Welcome.youDoThisPart();
 
     }
 
@@ -48,6 +56,7 @@ private class PackageCoverageTests {
         WeekThreeClassExercises.sObjects();
         WeekThreeClassExercises.whileLoops();
         WeekThreeClassExercises.conditionals();
+        WeekThreeClassExercises.loopingThroughLists();
         WeekThreeHomework.homeworkAssignmentMethod();
         CommentingOnCodeExercise.cartValues();
 
@@ -71,15 +80,19 @@ private class PackageCoverageTests {
 
     @isTest static void weekFiveTests() {
 
-        WeekFiveClassExercises.allAboutSets();
-        WeekFiveClassExercises.muchAdoAboutMaps();
-        WeekFiveHomework.setsReview();
-        WeekFiveHomework.listsReview();
-        WeekFiveHomework.mapsReview();
+        WeekFiveHomework.createSampleAccounts(2);
 
     }
 
     @isTest static void weekSixTests() {
+
+        WeekSixHomework.setsReview();
+        WeekSixHomework.listsReview();
+        WeekSixHomework.mapsReview();
+
+    }
+
+    @isTest static void weekSevenTests() {
 
         // create a hot account
         Account a = new Account();
@@ -87,20 +100,15 @@ private class PackageCoverageTests {
         a.Rating = 'Hot';
         insert a;
 
-        WeekSixClassExercises.getHotAccounts(2);
-        WeekSixClassExercises.getOpenOppsForHotAccounts();
-        WeekSixClassExercises.loopingThroughLists();
-        WeekSixClassExercises.createOppsForHotAccounts(2, 2);
-        WeekSixHomework.soqlPractice();
-        WeekSixHomework.forTheLoveOfForLoops();
+        WeekSevenClassExercises.getHotAccounts(2);
+        WeekSevenClassExercises.getOpenOppsForHotAccounts();
+        WeekSevenClassExercises.createOppsForHotAccounts(2, 2);
+        WeekSevenHomework.soqlPractice();
+        WeekSevenHomework.forTheLoveOfForLoops();
 
     }
 
-    @isTest static void weekEightTests() {
-
-        WeekEightHomework.createSampleAccounts(2);
-
-    }
+    
 
     @isTest static void objectTests() {
         Item i = new Item(3.5, 'Test', 'Test Item', 100);

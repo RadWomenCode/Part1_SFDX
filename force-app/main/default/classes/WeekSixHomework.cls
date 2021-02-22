@@ -1,62 +1,65 @@
 public with sharing class WeekSixHomework {
+    // Remember Sets & Maps??  We did a little practice with Lists in week 2, but we need to make sure we know how to use Sets & Maps as well!!
+	
+    public static void setsReview(){
 
-    public static void soqlPractice() {
+        //Your assignment: Play with Sets!
 
-        //1. Below is a SOQL query that should be returning the top 5 Accounts in our org based on Annual Revenue.
-        //Something's not quite right, can you fix the query?
-        List<Account> topFiveAccounts = [SELECT Id, Name, AnnualRevenue FROM Account WHERE AnnualRevenue != 0];
+        // 1.  Create a set of Strings and add at least 5 entries
 
-        System.debug('This should be 5: ' + topFiveAccounts.size());
-
-
-        //2. Here is a query that is missing something.  It compiles, but if you try and run this method in Anonymous
-        //you'll get an error when the method tries to use the query results.  Fix it! :)
-
-        List<Contact> contacts = [SELECT FirstName, MailingState FROM Contact LIMIT 10];
-
-        for (Contact c : contacts) {
-            String name = c.FirstName + ' ' + c.LastName;
-        }
+        //Use System.debug to print out the size of your set
 
 
-        //3.  Can you write a SOQL query from scratch that will return the top 10 Accounts in the org, ordered by annual
-        //revenue in decending order?  Print your results in the debug log.
+        //Add an item to your set that already exists
 
 
-        //4.  Can you write a SOQL query that will return all opportunities for all accounts in the topFiveAccounts list that we used
-        //in Number 1?  (topFiveAccounts) Hint:  If you're stuck, look back a the code in WeekSixClassExercises, getOpenOppsForHotAccounts method
-        //  Print your results in the debug log.
+        //Use System.debug to print out the size again,  they should be the same!
+
+
+
+        // 2.  Bonus Points!  Check out the documentation on Sets. Go to the section titled Set Methods. Pick one of the methods to try out and print the results to the debug log.  
+        // Documentation: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_set.htm
+        //Hint:  can you print out a boolean that indicates if the set is empty?  Can you clone it?
 
 
     }
 
-    public static void forTheLoveOfForLoops() {
+    public static void mapsReview () {
 
-        //1. Take a look at the list and loop below.  It's commented out since it can't run as is.
-        // Can you replace the ?? with the number that makes sense based on the comments?
-        // Remove the slashes and compile.
-        // Can you add an extra counter variable so that you can print out how many times the loop ran in total?
+        //Time to get creative!  
 
-
-        //This loop should run 5 times
-        //for (Integer i=0; i<??; i++) {
-        //  System.debug('i is now: '+i);
-        //}
+        // 1. Create a new Map.  You can use whatever primitives/object types you like, as long as they make sense.
+        // Try to add at least 5 Key/value pairs.
 
 
-        //2.  Below is a loop that iterates through a list.  Can you change it to use the new For Loop syntax?  It should print out
-        //each account name in the debug log when you're done.
-        //Use the list size to tell you how many loops, and use indexing to fetch values.  If you need help, check the
-        //loopingThroughLists method in WeekThree for hints
+        //Now, in the debug log, print out  a list of the values.
 
-        List<Account> accountList = [SELECT Id, Name FROM Account LIMIT 5];
 
-        for (Account a : accountList) {
-            System.debug('Account Name: ' + a.name);
-        }
+        //Can you print out a set of the Keys?
+
+
+
+        // 2. Bonus!  Check out the documentation on Maps. Go to the section titled Map Methods.  Manipulate the Map using one of the methods defined in the documentation
+        // Documentation: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_map.htm
+        // Hint: Can you remove an entry using the key?  Can you clear out the map without deleting it?
 
 
     }
 
+    public static void listsReview() {
 
+        // 1. Create a list of Strings.  Add at least 5 entries to the list, all in one line
+
+
+        // 2. Create a second list of Strings and add 5 or more entries to this list.
+
+
+        //3.  Bonus! Using the documentation on standard List methods from Salesforce, add the items from your first list, to your second list with one command
+        // Documentation: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_list.htm
+
+
+        //4.  Can you now loop through your combined list and print it to the debug log?  (Hint:  Check the documentation!)
+
+    }
+        
 }

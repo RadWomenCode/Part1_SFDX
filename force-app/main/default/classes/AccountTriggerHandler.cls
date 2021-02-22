@@ -18,7 +18,7 @@ public with sharing class AccountTriggerHandler {
     public static void handleAfterInsert(List<Account> newAccounts){
         
         Id runningUserId = UserInfo.getUserId();
-        //Week 7 Homework - bulkify this code
+        //Homework - bulkify this code
         for (Account a : newAccounts) {
             Case c = new Case();
             c.Status = 'New';

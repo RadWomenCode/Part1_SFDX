@@ -1,67 +1,41 @@
 public with sharing class WeekFiveHomework {
     
-	// Remember Sets & Maps??  We did a little practice with Lists in week 2, but we need to make sure we know how to use Sets & Maps as well!!
-	
-    public static void setsReview(){
+	 //Assignment:  The following method is supposed to create the number of accounts specified in the argument that it takes.
+    //Each Account should be named 'Sample Account #sampleNumber'  where sample number is the count.  So if you created 2 Accounts
+    //one would be called 'Sample Account 1' and the other 'Sample Account 2'
 
-        //Your assignment: Play with Sets!
+    //Also, when we're done inserting them, we will create a case for each one with a Status of 'New', Origin of 'New Account' and the
+    //desription and subject of your choice.
 
-        // 1.  Create a set of Strings and add at least 5 entries
+    //This isn't working quite right.  Can you use your debugging skills to fix it?  I had to comment it out since it won't compile
+    //Look out for consistency and formatting too!  (even if they don't break the code)
+    //Add comments to describe what the code is doing.
+    //After you get it to compile, run it in execute anonymous and check that it's really working!  Look up your new accounts in your org!
 
-        //Use System.debug to print out the size of your set
+    public static void createSampleAccounts(Decimal numberOfAccounts) {
 
-
-        //Add an item to your set that already exists
-
-
-        //Use System.debug to print out the size again,  they should be the same!
-
-
-
-        // 2.  Bonus Points!  Check out the documentation on Sets. Go to the section titled Set Methods. Pick one of the methods to try out and print the results to the debug log.  
-        // Documentation: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_set.htm
-        //Hint:  can you print out a boolean that indicates if the set is empty?  Can you clone it?
-
-
-    }
-
-    public static void mapsReview () {
-
-        //Time to get creative!  
-
-        // 1. Create a new Map.  You can use whatever primitives/object types you like, as long as they make sense.
-        // Try to add at least 5 Key/value pairs.
-
-
-        //Now, in the debug log, print out  a list of the values.
-
-
-        //Can you print out a set of the Keys?
-
-
-
-        // 2. Bonus!  Check out the documentation on Maps. Go to the section titled Map Methods.  Manipulate the Map using one of the methods defined in the documentation
-        // Documentation: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_map.htm
-        // Hint: Can you remove an entry using the key?  Can you clear out the map without deleting it?
-
-
-    }
-
-    public static void listsReview() {
-
-        // 1. Create a list of Strings.  Add at least 5 entries to the list, all in one line
-
-
-        // 2. Create a second list of Strings and add 5 or more entries to this list.
-
-
-        //3.  Bonus! Using the documentation on standard List methods from Salesforce, add the items from your first list, to your second list with one command
-        // Documentation: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_list.htm
-
-
-        //4.  Can you now loop through your combined list and print it to the debug log?  (Hint:  Check the documentation!)
-
-    }
+        /*      List<Account> acctList = new List<Account>();
+                for (Integer i = 0; i <= numberOfAccounts; i++) {
+                    Account a = new Account();
+                    a.Name = 'NewAccount';
+                }
+        
+                insert acctList;
+        
+                List<Case> casesToInsert = new List<Case>();
+        
+                for (Account a: accctList) {
+                    Case c = new Case();
+                    c.Status = "New";
+                    c.Origin = 'New Account'
+                    c.AccountId = a;
+                    c.Subject 'New Case';
+                    c.Descritpion == 'Follow Up';
+                    casesToInsert.add(c);
+        
+                }*/
+        
+            }
 
 
 
