@@ -30,7 +30,7 @@ trigger AccountTriggerBad on Account (before insert, before update, before delet
     //We also need to pull the email from the account owner's user record and put it on the case record
     //(hint, the account owner will be the running user, in this use case, and our code has already fetched that id for us below:
     else if (Trigger.isInsert && Trigger.isAfter) {
-        //Week 7 Homework:  Properly bulkify this code:
+        //Week 8 Homework:  Properly bulkify this code:
         Id runningUserId = UserInfo.getUserId();
 
         for (Account a : Trigger.new) {
