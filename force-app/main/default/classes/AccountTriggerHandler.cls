@@ -77,4 +77,23 @@ public with sharing class AccountTriggerHandler {
 
     }
 
+    public static void bulkificationExample(List<Account> accountList){
+         //Week 8 Homework:  Properly bulkify this code:
+         Id runningUserId = UserInfo.getUserId();
+
+         for (Account a : accountList) {
+             Case c = new Case();
+             c.Status = 'New';
+             c.Origin = 'New Account'; //Make sure you've added this as a picklist value for this field
+             c.Subject = 'Send Welcome Package';
+             c.AccountId = a.Id;
+             c.Description = 'Please follow up with this new Account and send them a Welcome Package.';
+ 
+             //Get the email address for the Account owner
+             User u = [SELECT Id, Email FROM User WHERE Id = :runningUserId];
+             c.Staff_Email_Address__c = u.Email;
+             insert c;
+         }
+    }
+
 }
