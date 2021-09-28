@@ -209,63 +209,7 @@ private class PackageCoverageTests {
 
     }
 
-    @isTest static void completedStockItemHandlerCoverage() {
-
-        List < Stock_Item__c > newItems = new List < Stock_Item__c >();
-
-        // insert a stock item to match on
-        Stock_Item__c dupeItem = new Stock_Item__c();
-        dupeItem.Item_Name__c = 'Test1';
-        dupeItem.Description__c = 'Test';
-        dupeItem.Minimum_Stock_Level__c = 2;
-        dupeItem.Stock_on_Hand__c = 5;
-        insert dupeItem;
-
-        for (integer i=0; i<5; i++) {
-            Stock_Item__c item = new Stock_Item__c();
-            item.Item_Name__c = 'Test' +i;
-            item.Description__c = 'Test' +i;
-            item.Minimum_Stock_Level__c =i;
-            item.Stock_on_Hand__c = 5;
-            newItems.add(item);
-        }
-
-        CompletedStockHandler.onBeforeInsert(newItems);
-        List<Stock_Item__c> lowItems = CompletedStockHandler.getLowStockItems();
-
-        CompletedStockHandler.onBeforeInsert(newItems);
-
-
-    }
-
-    @isTest static void completedStockItemCoverage() {
-
-        CompletedStockItem item = new CompletedStockItem('Test', 'Test Description', 20, 5, 3);
-        item.create();
-
-        //insert sobject
-        Stock_Item__c sampleItem = new Stock_Item__c();
-        sampleItem.Item_Name__c = 'Test 1';
-        sampleItem.Description__c = 'Test';
-        sampleItem.Minimum_Stock_Level__c = 2;
-        sampleItem.Stock_on_Hand__c = 5;
-        insert sampleItem;
-
-        StockItem existingItem = new StockItem(sampleItem.Id);
-        existingItem.listPrice = 30;
-        existingItem.updateValues();
-
-
-    }
-
-    @isTest static void stockItemCoverage() {
-
-        StockItem si = new StockItem(40, 'test', 'test description', 5);
-
-
-
-    }
-
+    
     @isTest static void accountTriggerHandler() {
 
         List < Account > accounts = new List < Account >();
