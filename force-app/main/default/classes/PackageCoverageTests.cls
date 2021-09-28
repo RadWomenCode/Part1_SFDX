@@ -54,7 +54,6 @@ private class PackageCoverageTests {
     @isTest static void weekThreeTests() {
 
         WeekThreeClassExercises.sObjects();
-        WeekThreeClassExercises.whileLoops();
         WeekThreeClassExercises.conditionals();
         WeekThreeClassExercises.loopingThroughLists();
         WeekThreeHomework.homeworkAssignmentMethod();
@@ -64,23 +63,36 @@ private class PackageCoverageTests {
 
     @isTest static void weekFourTests() {
 
-        WeekFourClassExercises.whatYouGiveIsWhatYouGet('test');
-        WeekFourClassExercises.getFiscalQuarter(2);
-        WeekFourClassExercises.getFiscalQuarter(5);
-        WeekFourClassExercises.getFiscalQuarter(8);
-        WeekFourClassExercises.getFiscalQuarter(11);
-        WeekFourClassExercises.getFiscalQuarter(20);
-        WeekFourClassExercises.insertNewAccount('New Account Name');
-        WeekFourClassExercises.publicYouAreAwesome();
-        WeekFourHomework.printOutCitiesForExpansionDemo();
-        WeekFourHomework.getCitiesForExpansion();
-        WeekFourHomework.isTopSalesCity('Seattle');
-        WeekFourHomework.getTopTenAccounts();
+       
+        // create a hot account
+        Account a = new Account();
+        a.Name = 'Hot Account';
+        a.Rating = 'Hot';
+        insert a;
+
+        WeekFourClassExercises.getHotAccounts(2);
+        WeekFourClassExercises.getOpenOppsForHotAccounts();
+        WeekFourClassExercises.createOppsForHotAccounts(2, 2);
+        WeekFourHomework.soqlPractice();
+        WeekFourHomework.forTheLoveOfForLoops();
+     
     }
 
     @isTest static void weekFiveTests() {
 
-        WeekFiveHomework.createSampleAccounts(2);
+        
+        WeekFiveClassExercises.whatYouGiveIsWhatYouGet('test');
+        WeekFiveClassExercises.getFiscalQuarter(2);
+        WeekFiveClassExercises.getFiscalQuarter(5);
+        WeekFiveClassExercises.getFiscalQuarter(8);
+        WeekFiveClassExercises.getFiscalQuarter(11);
+        WeekFiveClassExercises.getFiscalQuarter(20);
+        WeekFiveClassExercises.insertNewAccount('New Account Name');
+        WeekFiveClassExercises.publicYouAreAwesome();
+        WeekFiveHomework.printOutCitiesForExpansionDemo();
+        WeekFiveHomework.getCitiesForExpansion();
+        WeekFiveHomework.isTopSalesCity('Seattle');
+        WeekFiveHomework.getTopTenAccounts();
 
     }
 
@@ -94,17 +106,8 @@ private class PackageCoverageTests {
 
     @isTest static void weekSevenTests() {
 
-        // create a hot account
-        Account a = new Account();
-        a.Name = 'Hot Account';
-        a.Rating = 'Hot';
-        insert a;
-
-        WeekSevenClassExercises.getHotAccounts(2);
-        WeekSevenClassExercises.getOpenOppsForHotAccounts();
-        WeekSevenClassExercises.createOppsForHotAccounts(2, 2);
-        WeekSevenHomework.soqlPractice();
-        WeekSevenHomework.forTheLoveOfForLoops();
+        
+        WeekSevenHomework.createSampleAccounts(2);
 
     }
 
