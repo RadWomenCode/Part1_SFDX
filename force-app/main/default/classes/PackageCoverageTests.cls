@@ -5,7 +5,6 @@
  */
 @isTest
 private class PackageCoverageTests {
-
     @isTest static void testMethodOne() {
         Account a = new Account();
         a.Name = 'test';
@@ -57,6 +56,7 @@ private class PackageCoverageTests {
         WeekThreeClassExercises.conditionals();
         WeekThreeClassExercises.loopingThroughLists();
         WeekThreeHomework.homeworkAssignmentMethod();
+        WeekThreeHomework.forLoopsExercise();
         CommentingOnCodeExercise.cartValues();
 
     }
@@ -208,6 +208,14 @@ private class PackageCoverageTests {
         collection.insertItemSobjects();
 
     }
+    
+    @isTest static void stockItemCoverage() {
+
+        StockItem si = new StockItem(40, 'test', 'test description', 5);
+
+
+
+    }
 
     
     @isTest static void accountTriggerHandler() {
@@ -225,6 +233,4 @@ private class PackageCoverageTests {
         AccountTriggerHandler.handleAfterInsert(accounts);
 
     }
-
-
 }
