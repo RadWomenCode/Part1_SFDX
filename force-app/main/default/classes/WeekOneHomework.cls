@@ -1,5 +1,5 @@
 public with sharing class WeekOneHomework {
-    
+
 	public static void introToPrimitives() {
 
         //Primitives are the simplest elements in a programming language
@@ -38,7 +38,7 @@ public with sharing class WeekOneHomework {
         Since I declared the variable up on line 31 and named it dec, the computer now knows it's a decimal.  I don't have to tell it again*/
 
         //One more note on syntax: what's with all the semi-colons?
-        // a ; is how you tell the computer that you're done with a line of code.  Get used to typing lots and lots of semi-colons!!
+        // a ; is how you tell the computer that you're done with a statement of code. Get used to typing lots and lots of semi-colons!!
 
     }
 
