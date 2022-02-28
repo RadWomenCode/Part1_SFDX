@@ -1,61 +1,40 @@
 public with sharing class WeekSevenHomework {
 
-    public static void soqlPractice() {
+    //Assignment:  The following method is supposed to create the number of accounts specified in the argument that it takes.
+    //Each Account should be named 'Sample Account #sampleNumber'  where sample number is the count.  So if you created 2 Accounts
+    //one would be called 'Sample Account 1' and the other 'Sample Account 2'
 
-        //1. Below is a SOQL query that should be returning the top 5 Accounts in our org based on Annual Revenue.
-        //Something's not quite right, can you fix the query?
-        List<Account> topFiveAccounts = [SELECT Id, Name, AnnualRevenue FROM Account WHERE AnnualRevenue != 0];
+    //Also, when we're done inserting them, we will create a case for each one with a Status of 'New', Origin of 'New Account' and the
+    //desription and subject of your choice.
 
-        System.debug('This should be 5: ' + topFiveAccounts.size());
+    //This isn't working quite right.  Can you use your debugging skills to fix it?  I had to comment it out since it won't compile
+    //Look out for consistency and formatting too!  (even if they don't break the code)
+    //Add comments to describe what the code is doing.
+    //After you get it to compile, run it in execute anonymous and check that it's really working!  Look up your new accounts in your org!
 
+    public static void createSampleAccounts(Decimal numberOfAccounts) {
 
-        //2. Here is a query that is missing something.  It compiles, but if you try and run this method in Anonymous
-        //you'll get an error when the method tries to use the query results.  Fix it! :)
+        /*      List<Account> acctList = new List<Account>();
+                for (Integer i = 0; i <= numberOfAccounts; i++) {
+                    Account a = new Account();
+                    a.Name = 'NewAccount';
+                }
+        
+                insert acctList;
+        
+                List<Case> casesToInsert = new List<Case>();
+        
+                for (Account a: accctList) {
+                    Case c = new Case();
+                    c.Status = "New";
+                    c.Origin = 'New Account'
+                    c.AccountId = a;
+                    c.Subject 'New Case';
+                    c.Descritpion == 'Follow Up';
+                    casesToInsert.add(c);
+        
+                }*/
+        
+            }
 
-        List<Contact> contacts = [SELECT FirstName, MailingState FROM Contact LIMIT 10];
-
-        for (Contact c : contacts) {
-            String name = c.FirstName + ' ' + c.LastName;
-        }
-
-
-        //3.  Can you write a SOQL query from scratch that will return the top 10 Accounts in the org, ordered by annual
-        //revenue in decending order?  Print your results in the debug log.
-
-
-        //4.  Can you write a SOQL query that will return all opportunities for all accounts in the topFiveAccounts list that we used
-        //in Number 1?  (topFiveAccounts) Hint:  If you're stuck, look back a the code in WeekSixClassExercises, getOpenOppsForHotAccounts method
-        //  Print your results in the debug log.
-
-
-    }
-
-    public static void forTheLoveOfForLoops() {
-
-        //1. Take a look at the list and loop below.  It's commented out since it can't run as is.
-        // Can you replace the ?? with the number that makes sense based on the comments?
-        // Remove the slashes and compile.
-        // Can you add an extra counter variable so that you can print out how many times the loop ran in total?
-
-
-        //This loop should run 5 times
-        //for (Integer i=0; i<??; i++) {
-        //  System.debug('i is now: '+i);
-        //}
-
-
-        //2.  Below is a loop that iterates through a list.  Can you change it to use the new For Loop syntax?  It should print out
-        //each account name in the debug log when you're done.
-        //Use the list size to tell you how many loops, and use indexing to fetch values.  If you need help, check the
-        //loopingThroughLists method in WeekThree for hints
-
-        List<Account> accountList = [SELECT Id, Name FROM Account LIMIT 5];
-
-        for (Account a : accountList) {
-            System.debug('Account Name: ' + a.name);
-        }
-
-
-    }
-   
 }

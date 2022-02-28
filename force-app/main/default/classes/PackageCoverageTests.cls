@@ -5,7 +5,6 @@
  */
 @isTest
 private class PackageCoverageTests {
-
     @isTest static void testMethodOne() {
         Account a = new Account();
         a.Name = 'test';
@@ -54,33 +53,46 @@ private class PackageCoverageTests {
     @isTest static void weekThreeTests() {
 
         WeekThreeClassExercises.sObjects();
-        WeekThreeClassExercises.whileLoops();
         WeekThreeClassExercises.conditionals();
         WeekThreeClassExercises.loopingThroughLists();
         WeekThreeHomework.homeworkAssignmentMethod();
+        WeekThreeHomework.forLoopsExercise();
         CommentingOnCodeExercise.cartValues();
 
     }
 
     @isTest static void weekFourTests() {
 
-        WeekFourClassExercises.whatYouGiveIsWhatYouGet('test');
-        WeekFourClassExercises.getFiscalQuarter(2);
-        WeekFourClassExercises.getFiscalQuarter(5);
-        WeekFourClassExercises.getFiscalQuarter(8);
-        WeekFourClassExercises.getFiscalQuarter(11);
-        WeekFourClassExercises.getFiscalQuarter(20);
-        WeekFourClassExercises.insertNewAccount('New Account Name');
-        WeekFourClassExercises.publicYouAreAwesome();
-        WeekFourHomework.printOutCitiesForExpansionDemo();
-        WeekFourHomework.getCitiesForExpansion();
-        WeekFourHomework.isTopSalesCity('Seattle');
-        WeekFourHomework.getTopTenAccounts();
+       
+        // create a hot account
+        Account a = new Account();
+        a.Name = 'Hot Account';
+        a.Rating = 'Hot';
+        insert a;
+
+        WeekFourClassExercises.getHotAccounts(2);
+        WeekFourClassExercises.getOpenOppsForHotAccounts();
+        WeekFourClassExercises.createOppsForHotAccounts(2, 2);
+        WeekFourHomework.soqlPractice();
+        WeekFourHomework.forTheLoveOfForLoops();
+     
     }
 
     @isTest static void weekFiveTests() {
 
-        WeekFiveHomework.createSampleAccounts(2);
+        
+        WeekFiveClassExercises.whatYouGiveIsWhatYouGet('test');
+        WeekFiveClassExercises.getFiscalQuarter(2);
+        WeekFiveClassExercises.getFiscalQuarter(5);
+        WeekFiveClassExercises.getFiscalQuarter(8);
+        WeekFiveClassExercises.getFiscalQuarter(11);
+        WeekFiveClassExercises.getFiscalQuarter(20);
+        WeekFiveClassExercises.insertNewAccount('New Account Name');
+        WeekFiveClassExercises.publicYouAreAwesome();
+        WeekFiveHomework.printOutCitiesForExpansionDemo();
+        WeekFiveHomework.getCitiesForExpansion();
+        WeekFiveHomework.isTopSalesCity('Seattle');
+        WeekFiveHomework.getTopTenAccounts();
 
     }
 
@@ -94,17 +106,8 @@ private class PackageCoverageTests {
 
     @isTest static void weekSevenTests() {
 
-        // create a hot account
-        Account a = new Account();
-        a.Name = 'Hot Account';
-        a.Rating = 'Hot';
-        insert a;
-
-        WeekSevenClassExercises.getHotAccounts(2);
-        WeekSevenClassExercises.getOpenOppsForHotAccounts();
-        WeekSevenClassExercises.createOppsForHotAccounts(2, 2);
-        WeekSevenHomework.soqlPractice();
-        WeekSevenHomework.forTheLoveOfForLoops();
+        
+        WeekSevenHomework.createSampleAccounts(2);
 
     }
 
@@ -205,56 +208,7 @@ private class PackageCoverageTests {
         collection.insertItemSobjects();
 
     }
-
-    @isTest static void completedStockItemHandlerCoverage() {
-
-        List < Stock_Item__c > newItems = new List < Stock_Item__c >();
-
-        // insert a stock item to match on
-        Stock_Item__c dupeItem = new Stock_Item__c();
-        dupeItem.Item_Name__c = 'Test1';
-        dupeItem.Description__c = 'Test';
-        dupeItem.Minimum_Stock_Level__c = 2;
-        dupeItem.Stock_on_Hand__c = 5;
-        insert dupeItem;
-
-        for (integer i=0; i<5; i++) {
-            Stock_Item__c item = new Stock_Item__c();
-            item.Item_Name__c = 'Test' +i;
-            item.Description__c = 'Test' +i;
-            item.Minimum_Stock_Level__c =i;
-            item.Stock_on_Hand__c = 5;
-            newItems.add(item);
-        }
-
-        CompletedStockHandler.onBeforeInsert(newItems);
-        List<Stock_Item__c> lowItems = CompletedStockHandler.getLowStockItems();
-
-        CompletedStockHandler.onBeforeInsert(newItems);
-
-
-    }
-
-    @isTest static void completedStockItemCoverage() {
-
-        CompletedStockItem item = new CompletedStockItem('Test', 'Test Description', 20, 5, 3);
-        item.create();
-
-        //insert sobject
-        Stock_Item__c sampleItem = new Stock_Item__c();
-        sampleItem.Item_Name__c = 'Test 1';
-        sampleItem.Description__c = 'Test';
-        sampleItem.Minimum_Stock_Level__c = 2;
-        sampleItem.Stock_on_Hand__c = 5;
-        insert sampleItem;
-
-        StockItem existingItem = new StockItem(sampleItem.Id);
-        existingItem.listPrice = 30;
-        existingItem.updateValues();
-
-
-    }
-
+    
     @isTest static void stockItemCoverage() {
 
         StockItem si = new StockItem(40, 'test', 'test description', 5);
@@ -263,6 +217,7 @@ private class PackageCoverageTests {
 
     }
 
+    
     @isTest static void accountTriggerHandler() {
 
         List < Account > accounts = new List < Account >();
@@ -278,6 +233,4 @@ private class PackageCoverageTests {
         AccountTriggerHandler.handleAfterInsert(accounts);
 
     }
-
-
 }

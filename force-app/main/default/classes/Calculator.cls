@@ -1,6 +1,6 @@
 /****************************************************************
  * @name:		Calculator
- * @author:		Krithika Dharmarajan (dharmarajan.krithika@gmail.com)
+ * @author:		KrithikaDharmarajan (dharmarajan.krithika@gmail.com)
  * @desc:		Class to describe way to call methods and using if-else condition
  * @group RAD
  ****************************************************************/

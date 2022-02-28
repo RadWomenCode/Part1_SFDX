@@ -1,64 +1,61 @@
 public with sharing class WeekFourHomework {
 
-    //Let's practice calling different methods by writing our very own methods. You will write and save methods in the space below
-    //that call the existing methods you see already written here.  Ready?  Let's Go!
+    public static void soqlPractice() {
+
+        //1. Below is a SOQL query that should be returning the top 5 Accounts in our org based on Annual Revenue.
+        //Something's not quite right, can you fix the query?
+        List<Account> topFiveAccounts = [SELECT Id, Name, AnnualRevenue FROM Account WHERE AnnualRevenue != 0];
+
+        System.debug('This should be 5: ' + topFiveAccounts.size());
 
 
-    //Sample: Here is a public method that calls the getCitiesForExpansion below and prints the results to our debug log
-    public static void printOutCitiesForExpansionDemo() {
-        //The code on the left of the equals sign instantiates a list of Strings, the code on the right side calls our method and returns a list of cities
-        //the equals sign assigns the returned value, to the list we created
-        List<String> cities = getCitiesForExpansion();
-        System.debug('Here are the cities: ' + cities);
-    }
+        //2. Here is a query that is missing something.  It compiles, but if you try and run this method in Anonymous
+        //you'll get an error when the method tries to use the query results.  Fix it! :)
 
+        List<Contact> contacts = [SELECT FirstName, MailingState FROM Contact LIMIT 10];
 
-    //1.  Write a public method that calls the getCitiesForExpansion method to get a list of cities, then add
-    //another city to the list before printing it to the debug log.
-    //(see the sample above for an example of calling that method-You can even start by copying and pasting that method here, renaming and modifying it)
-
-
-    //2.Write a public method that calls the isTopSalesCity method and prints out the returned boolean to the debug log.
-    //You'll need to pass in a string variable that is a city name as the argument!
-
-
-    //3.  BONUS!!  If you've finished the first two, there's another public method below that will return the top 10 Accounts
-    //Write a public method that calls getTopTenAccounts.  Can you loop through those accounts and change the name of those accounts with a DML Update?
-
-
-    //no arguments taken, will return the same thing every time
-    public static List<String> getCitiesForExpansion() {
-        List<String> cities = new List<String>();
-
-        cities.add('Tokyo');
-        cities.add('Melbourne');
-        cities.add('Portland');
-
-        //this is the line that sends our final product out to whatever method called this one
-        return cities;
-    }
-
-
-    //takes a string argument and returns a boolean, based on that input
-    public static Boolean isTopSalesCity (String cityName) {
-        if (cityName=='Seattle' || cityName=='Los Angeles' || cityName=='Portland') {
-            return true;
-        } else {
-            return false;
+        for (Contact c : contacts) {
+            String name = c.FirstName + ' ' + c.LastName;
         }
+
+
+        //3.  Can you write a SOQL query from scratch that will return the top 10 Accounts in the org, ordered by annual
+        //revenue in decending order?  Print your results in the debug log.
+
+
+        //4.  Can you write a SOQL query that will return all opportunities for all accounts in the topFiveAccounts list that we used
+        //in Number 1?  (topFiveAccounts) Hint:  If you're stuck, look back a the code in ClassExercises, getOpenOppsForHotAccounts method
+        //  Print your results in the debug log.
+
+
     }
 
+    public static void forTheLoveOfForLoops() {
 
-    //This method will give you the top ten account records, based on Annual Revenue
-    //You don't need to know exactly how the method you're calling works, we'll cover SOQL queries later, but take a look and you'll likely get the gist
-    //What's important to know is that when called it will return a list of top Accounts based on revenue, returning no more than 10.
-    public static List<Account> getTopTenAccounts() {
+        //1. Take a look at the list and loop below.  It's commented out since it can't run as is.
+        // Can you replace the ?? with the number that makes sense based on the comments?
+        // Remove the slashes and compile.
+        // Can you add an extra counter variable so that you can print out how many times the loop ran in total?
 
-        List<Account> topAccounts =
-            [SELECT Id, Name, AnnualRevenue FROM Account WHERE AnnualRevenue != NULL AND AnnualRevenue != 0
-            ORDER BY AnnualRevenue DESC LIMIT 10];
-        return topAccounts;
+
+        //This loop should run 5 times
+        //for (Integer i=0; i<??; i++) {
+        //  System.debug('i is now: '+i);
+        //}
+
+
+        //2.  Below is a loop that iterates through a list.  Can you change it to use the traditional For Loop syntax?  It should print out
+        //each account name in the debug log when you're done.
+        //Use the list size to tell you how many loops, and use indexing to fetch values.  If you need help, check the
+        //loopingThroughLists method in before week for hints
+
+        List<Account> accountList = [SELECT Id, Name FROM Account LIMIT 5];
+
+        for (Account a : accountList) {
+            System.debug('Account Name: ' + a.name);
+        }
+
+
     }
-
 
 }

@@ -1,53 +1,80 @@
 public with sharing class WeekFourClassExercises {
 
-    //This simple method just returns whatever gets passed in.  Let's practice calling it from Execute anonymous
-    public static String whatYouGiveIsWhatYouGet(string argumentBeingPassedIn) {
-        return argumentBeingPassedIn;
+    public static List<Account> getHotAccounts(Integer numberOfAccounts) {
+
+        //In this piece of sample code, we want to return the number of Hot accounts requested.
+        //This method takes one argument, an integer that tells us how many accounts to return
+        //(This is a maximum.  IF we ask for 10, but there are only 2 Hot Accounts, you'll get 2 since we're limiting to 10)
+        //An additional requirement is that we want to incude the Account Owner's email with the results
+
+        List<Account> hotAccounts =
+            [SELECT Id, Name, OwnerId, Priority__c, Owner.Email, AnnualRevenue FROM Account WHERE Rating = 'Hot' ORDER BY AnnualRevenue DESC LIMIT :numberOfAccounts];
+        System.debug('How Many Hot accounts did we find? ' + hotAccounts.size());
+
+        return hotAccounts;
+
     }
 
-    //Fun, but usually we're passing an argument (aka parameter) into a method, so that it can do something with it.  and possibly return something
+    public static void doStuffWithHotAccounts () {
 
-    //This public method takes a Date as an argument and returns the fiscal quarter as a String in the format: Q1, Q2 etc.
-    public static String getFiscalQuarter(Integer numMonth) {
-        String fiscalQuarter;
-        if (numMonth >= 1 && numMonth <= 3) {
-            fiscalQuarter = 'Q1';
-        } else if (numMonth >= 4 && numMonth <= 6) {
-            fiscalQuarter = 'Q2';
-        } else if (numMonth >= 7 && numMonth <= 9) {
-            fiscalQuarter = 'Q3';
-        } else if (numMonth >= 10 && numMonth <= 12) {
-            fiscalQuarter = 'Q4';
-        } else {
-            //The only way we end up here, is if this method was given an Integer that isn't a valid month,
-            //like 13 or 99.  There are a lot of ways to handle these "exceptions" which we will cover in a future course.
-            //For now we'll just return null, since there is no valid response
-            return null;
+        //Call our get Hot Accounts Method and do stuff
+        getHotAccounts(2);
+
+    }
+
+
+
+    //This method returns a list of all the open opportunities there are for the top 5 accounts we have
+    //It calls the getHotAccounts method we just reviewed
+    public static List<Opportunity> getOpenOppsForHotAccounts() {
+
+        //get the list of the top 5 hot accounts
+        List<Account> hotAccounts = getHotAccounts(5);
+
+        List<Opportunity> hotAccountsOpenOpps = [SELECT Id, Amount, StageName FROM Opportunity WHERE IsClosed = false AND AccountId in:hotAccounts];
+
+        //Let's see those opportunities!
+        System.debug('Our Hot Account Opportunities: ' + hotAccountsOpenOpps);
+
+
+        return hotAccountsOpenOpps;
+
+    }
+
+
+    //Let's look at the new For loop syntax we learned.  There are times when you might not know how many times you need to do something
+    //in advance.  This is the perfect tool for those scenarios
+    public static void createOppsForHotAccounts(Integer hotAccountLimit, Integer numberOfOpps) {
+        System.debug('What is our limit of Hot Accounts to pull? ' + hotAccountLimit);
+        System.debug('How many Opportunities should we create for each Account? ' + numberOfOpps);
+
+        //Call the getHotAccounts method to get a list of the top accounts, passing the number of accounts desired to the method
+        List<Account> hotAccounts = getHotAccounts(hotAccountLimit);
+
+        //In this example we will create a number of opportunities for each top account.  However many we request when this method is
+        //called.  A bit silly perhaps, but this should help illustrate the syntax
+
+        //List to hold the opportunities we're creating for later insertion
+        List<Opportunity> oppsToInsert = new List<Opportunity>();
+
+        //First we loop through the top accounts
+        for (Account a : hotAccounts) {
+            //now we need to create however many opportunities were passed in as an argument.  For that, we use an integer to keep track
+            //of how many times we've looped through, stopping when we've done the loop the right number of times
+            for (Integer i = 0; i < numberOfOpps; i++) {
+                System.debug('What is the value of i at this moment?: ' + i);
+                Opportunity opp = new Opportunity();
+                opp.Name = 'Auto Generated Opportunity for Hot Accounts';
+                opp.CloseDate = Date.today().addMonths(3);
+                opp.AccountId = a.Id;
+                opp.StageName = 'Prospecting';
+                opp.OwnerId = a.OwnerId;
+                oppsToInsert.add(opp);
+            }
         }
 
-        return fiscalQuarter;
-    }
-
-    //Sometimes a method will take an argument, but return nothing.  That is what Void indicates below.  Nothing will be returned
-    public static void insertNewAccount(String name) {
-        Account a = new Account();
-        a.Name = name;
-
-        insert a;
-
-        //that's all folks!  Nothing gets returned, we just created an account with the name provided.
-    }
-
-
-    //Private vs. Public.  We can call the public method, which calls the private, but we can't call the private directly
-
-    public static String publicYouAreAwesome() {
-        return privateYouAreAwesome();
-    }
-
-
-    private static String privateYouAreAwesome() {
-        return 'You are Awesome!';
+        System.debug('How many Opportunities are we inserting? ' + oppsToInsert.size());
+        insert oppsToInsert;
 
     }
 
