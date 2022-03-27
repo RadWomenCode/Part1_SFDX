@@ -2,7 +2,7 @@ public with sharing class WeekTwoClassExercises {
     //Another demo class that we will use to work through new concepts in-Class
 
 
-    public static void comparisonAndLogicalOperators() {
+    public static void salesforceOperators() {
         //Conditionals and logical operators are an important part of coding.  You may already be familiar with them in concept from formula fields and other
         //declarative tools in Salesforce that use conditional logic.
 
@@ -18,6 +18,8 @@ public with sharing class WeekTwoClassExercises {
         && signifies AND
         || signifies OR
 
+        //Ternary Operator short-hand for if-then-else statements
+
         */
 
         Boolean isGreater = 4 > 6;  // Our isGreater variable must be false, since 4 is not greater than 6
@@ -30,6 +32,21 @@ public with sharing class WeekTwoClassExercises {
         Boolean result = (5 > 2 && (10 == 5 * 2)); //result must be true since 5 is greater than 2 AND 10 is equivilant to 5 times 2
 
         Boolean anotherResult = 2 != 3;  //again, true since 2 does not equal 3
+
+        
+        Boolean bool = true;
+
+        String isBool;
+        //conditional statement example
+        if(bool) {
+            isBool = 'value is true';
+        }
+        else {
+            isBool = 'value is false'; 
+        }
+
+        //Ternary operator example
+        String isBoolternany = bool ? 'value is true' : 'value is false';
 
         //Hopefully this gave you a quick look at the syntax
 
