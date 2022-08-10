@@ -15,44 +15,15 @@ public with sharing class WeekFourClassExercises {
 
     }
 
-    public static void doStuffWithHotAccounts () {
-
-        //Call our get Hot Accounts Method and do stuff
-        getHotAccounts(2);
-
-    }
-
-
-
-    //This method returns a list of all the open opportunities there are for the top 5 accounts we have
-    //It calls the getHotAccounts method we just reviewed
-    public static List<Opportunity> getOpenOppsForHotAccounts() {
-
-        //get the list of the top 5 hot accounts
-        List<Account> hotAccounts = getHotAccounts(5);
-
-        List<Opportunity> hotAccountsOpenOpps = [SELECT Id, Amount, StageName FROM Opportunity WHERE IsClosed = false AND AccountId in:hotAccounts];
-
-        //Let's see those opportunities!
-        System.debug('Our Hot Account Opportunities: ' + hotAccountsOpenOpps);
-
-
-        return hotAccountsOpenOpps;
-
-    }
-
-
+  
     //Let's look at the new For loop syntax we learned.  There are times when you might not know how many times you need to do something
     //in advance.  This is the perfect tool for those scenarios
-    public static void createOppsForHotAccounts(Integer hotAccountLimit, Integer numberOfOpps) {
-        System.debug('What is our limit of Hot Accounts to pull? ' + hotAccountLimit);
-        System.debug('How many Opportunities should we create for each Account? ' + numberOfOpps);
+    public static void forEachAccountsexample(Integer numberOfAccounts, Integer numberOfOpps) {
+        //Get all the HotAccounts using SOQL
+        List<Account> hotAccounts =
+            [SELECT Id, Name, OwnerId, Priority__c, Owner.Email, AnnualRevenue FROM Account WHERE Rating = 'Hot' ORDER BY AnnualRevenue DESC LIMIT :numberOfAccounts];
+        System.debug('How Many Hot accounts did we find? ' + hotAccounts.size());
 
-        //Call the getHotAccounts method to get a list of the top accounts, passing the number of accounts desired to the method
-        List<Account> hotAccounts = getHotAccounts(hotAccountLimit);
-
-        //In this example we will create a number of opportunities for each top account.  However many we request when this method is
-        //called.  A bit silly perhaps, but this should help illustrate the syntax
 
         //List to hold the opportunities we're creating for later insertion
         List<Opportunity> oppsToInsert = new List<Opportunity>();

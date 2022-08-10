@@ -5,6 +5,7 @@
  */
 @isTest
 private class PackageCoverageTests {
+
     @isTest static void testMethodOne() {
         Account a = new Account();
         a.Name = 'test';
@@ -39,7 +40,7 @@ private class PackageCoverageTests {
     
     @isTest static void weekTwoTests() {
        
-        WeekTwoClassExercises.comparisonAndLogicalOperators();
+        WeekTwoClassExercises.salesforceOperators();
         WeekTwoClassExercises.introToLists();
         WeekTwoClassExercises.allAboutSets();
         WeekTwoClassExercises.muchAdoAboutMaps();
@@ -56,7 +57,6 @@ private class PackageCoverageTests {
         WeekThreeClassExercises.conditionals();
         WeekThreeClassExercises.loopingThroughLists();
         WeekThreeHomework.homeworkAssignmentMethod();
-        WeekThreeHomework.forLoopsExercise();
         CommentingOnCodeExercise.cartValues();
 
     }
@@ -71,8 +71,7 @@ private class PackageCoverageTests {
         insert a;
 
         WeekFourClassExercises.getHotAccounts(2);
-        WeekFourClassExercises.getOpenOppsForHotAccounts();
-        WeekFourClassExercises.createOppsForHotAccounts(2, 2);
+        WeekFourClassExercises.forEachAccountsexample(2, 2);
         WeekFourHomework.soqlPractice();
         WeekFourHomework.forTheLoveOfForLoops();
      
@@ -89,6 +88,7 @@ private class PackageCoverageTests {
         WeekFiveClassExercises.getFiscalQuarter(20);
         WeekFiveClassExercises.insertNewAccount('New Account Name');
         WeekFiveClassExercises.publicYouAreAwesome();
+        WeekFiveClassExercises.getOpenOppsForHotAccounts();
         WeekFiveHomework.printOutCitiesForExpansionDemo();
         WeekFiveHomework.getCitiesForExpansion();
         WeekFiveHomework.isTopSalesCity('Seattle');
@@ -208,16 +208,14 @@ private class PackageCoverageTests {
         collection.insertItemSobjects();
 
     }
-    
+
+
     @isTest static void stockItemCoverage() {
 
         StockItem si = new StockItem(40, 'test', 'test description', 5);
 
-
-
     }
 
-    
     @isTest static void accountTriggerHandler() {
 
         List < Account > accounts = new List < Account >();
@@ -233,4 +231,6 @@ private class PackageCoverageTests {
         AccountTriggerHandler.handleAfterInsert(accounts);
 
     }
+
+
 }

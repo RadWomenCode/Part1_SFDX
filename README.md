@@ -57,5 +57,15 @@ While we welcome bug reports and refinements in all areas, we are particularly i
 3. Improvements to sample code and exercises to make them more realistic for a typical Salesforce implementation and/or to update older patterns into currently accepted best practices.
 
 ## Rights
-
 All Content is the property of RAD Women and is provided for the express purpose of curriculum improvement submissions.  Please contact us at apexradwomen@gmail.com before using or distributing any portion of this or other RAD materials.
+=======
+## Setting up an org with CumulusCI
+This project includes CumulusCI configuration files as a convenience for anyone who is already using CumulusCI (typically coaches). If you are not already a cci user, skip this section and use the installation instructions that were emailed to you.
+
+[CumulusCI](https://cumulusci.readthedocs.io/) is an automation framework that helps quickly configure Salesforce orgs. If you are already a cci user, you can create an org from the repository with picklists and page layouts updated by doing the following:
+
+1. Create an org.
+    - Option A: Create a new scratch org (`cci org scratch dev radscratchorg`). This is a temporary org so use this option for office hours or other short use cases. (It lasts for 7 days by default.)
+    - Option B: Sign up for a developer org at developer.salesforce and [connect it to cci](https://cumulusci.readthedocs.io/en/stable/connected_orgs.html) (`cci org connect raddevorg`).
+2. Make sure the install password is saved as an environment variable. You can do this temporarily by running `export RAD_PACKAGE_KEY=replacethiswithpassword` from the command line.
+3. Run dev org flow to complete configuration (`cci flow run dev_org --org raddevorg`).

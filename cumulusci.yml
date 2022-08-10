@@ -1,0 +1,70 @@
+minimum_cumulusci_version: '3.53.0'
+project:
+    name: RADWomenPart1
+    package:
+        name: RADWomenPart1
+        api_version: '52.0'
+    git: 
+        default_branch: master
+        repo_url: https://github.com/RadWomenCode/Part1_SFDX
+    source_format: sfdx
+    dependencies:
+        - version_id: 04t6O000001INCR
+          password_env_name: RAD_PACKAGE_KEY
+
+flows:
+    dev_org:
+        steps:
+            1: 
+                task: update_dependencies
+            2:
+                task: add_standard_value_set_entries
+                options:
+                    api_names: CaseOrigin
+                    entries:
+                        - fullName: New Account
+                          label: New Account
+                        - fullName: Questionable Contact
+                          label: Questionable Contact 
+                ui_options:
+                    name: Add values to Case Origin picklist
+            3: 
+                task: add_page_layout_fields
+                options:
+                    api_names: "Account-Account Layout"
+                    fields:
+                      - api_name: Est_Annual_Sales__c
+                        position:
+                          - relative: bottom
+                            section: 0
+                            column: first
+                      - api_name: Priority__c
+                        position:
+                          - relative: bottom
+                            section: 0
+                            column: last
+                      - api_name: Cuisine_Type__c
+                        position:
+                          - relative: bottom
+                            section: 0
+                            column: last
+                ui_options:
+                    name: "Add fields to Account Layout"
+            4: 
+                task: add_page_layout_fields
+                options:
+                    api_names: "Case-Case Layout"
+                    fields:
+                      - api_name: Staff_Email_Address__c
+                        position:
+                          - relative: bottom
+                            section: 0
+                            column: first
+                ui_options:
+                    name: "Add fields to Case Layout"
+            5:
+                task: execute_anon
+                options:    
+                    path: scripts/sort_app_menu.apex
+                ui_options:
+                    name: "Sort App Menu"

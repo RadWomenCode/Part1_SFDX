@@ -25,6 +25,10 @@ public with sharing class WeekFiveHomework {
     //3.  BONUS!!  If you've finished the first two, there's another public method below that will return the top 10 Accounts
     //Write a public method that calls getTopTenAccounts.  Can you loop through those accounts and change the name of those accounts with a DML Update?
 
+    //4.  BONUS!! Can you write a SOQL query that will return all opportunities for toptenAccounts based on Annual Revenue 
+    //Hint:  If you're stuck, look back a the code in ClassExercises, getOpenOppsForHotAccounts method
+    //  Print your results in the debug log.
+
 
     //no arguments taken, will return the same thing every time
     public static List<String> getCitiesForExpansion() {
@@ -50,7 +54,6 @@ public with sharing class WeekFiveHomework {
 
 
     //This method will give you the top ten account records, based on Annual Revenue
-    //You don't need to know exactly how the method you're calling works, we'll cover SOQL queries later, but take a look and you'll likely get the gist
     //What's important to know is that when called it will return a list of top Accounts based on revenue, returning no more than 10.
     public static List<Account> getTopTenAccounts() {
 

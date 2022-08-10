@@ -50,6 +50,20 @@ public with sharing class WeekFiveClassExercises {
         return 'You are Awesome!';
 
     }
+    
+    //This method returns a list of all the open opportunities there are for the top 5 accounts we have
+    //It calls the getHotAccounts method from another class
+    public static List<Opportunity> getOpenOppsForHotAccounts() {
+
+        //get the list of the top 5 hot accounts
+        List<Account> hotAccounts = WeekFourClassExercises.getHotAccounts(5);
+
+        List<Opportunity> hotAccountsOpenOpps = [SELECT Id, Amount, StageName FROM Opportunity WHERE IsClosed = false AND AccountId in:hotAccounts];
+
+        //Let's see those opportunities!
+        System.debug('Our Hot Account Opportunities: ' + hotAccountsOpenOpps);
+        return hotAccountsOpenOpps;
+    }
 
     
 }
