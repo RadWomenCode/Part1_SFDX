@@ -6,7 +6,7 @@
  ****************************************************************/
 public class Calculator {
 	
-    //Static final Variables will help create it as a CONSTANT, only one  
+    //Static final Variables will help create it as a CONSTANT, only one
     //copy of the variable exists which cannot be reinitialized
     public static final String OPERATION_ADDITION = '+';
     public static final String OPERATION_DIVIDE = '/';
