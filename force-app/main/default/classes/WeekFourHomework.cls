@@ -6,7 +6,7 @@ public with sharing class WeekFourHomework {
         //Something's not quite right, can you fix the query?
         List<Account> topFiveAccounts = [SELECT Id, Name, AnnualRevenue FROM Account WHERE AnnualRevenue != 0];
 
-        System.debug('This should be 5 : ' + topFiveAccounts.size());
+        System.debug('This should be 5 :' + topFiveAccounts.size());
 
 
         //2. Here is a query that is missing something.  It compiles, but if you try and run this method in Anonymous
