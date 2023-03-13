@@ -50,13 +50,23 @@ public with sharing class WeekFiveClassExercises {
         return 'You are Awesome!';
 
     }
+
+    public static List<Account> getHotAccounts(Integer numberOfAccounts) {
+        //In this piece of sample code, we are printing the number of Hot accounts based on input from user.
+        //(This is a maximum.  IF we ask for 10, but there are only 2 Hot Accounts, you'll get 2 since we're limiting to 10)
+        //An additional requirement is that we want to incude the Account Owner's email with the results
+        List<Account> hotAccounts =
+            [SELECT Id, Name, OwnerId, Priority__c, Owner.Email, AnnualRevenue FROM Account WHERE Rating = 'Hot' ORDER BY AnnualRevenue DESC LIMIT :numberOfAccounts];
+        System.debug('How Many Hot accounts did we find? ' + hotAccounts.size());
+        return hotAccounts;
+    }
     
     //This method returns a list of all the open opportunities there are for the top 5 accounts we have
-    //It calls the getHotAccounts method from another class
+    //It calls the getHotAccounts method
     public static List<Opportunity> getOpenOppsForHotAccounts() {
 
         //get the list of the top 5 hot accounts
-        List<Account> hotAccounts = WeekFourClassExercises.getHotAccounts(5);
+        List<Account> hotAccounts = getHotAccounts(5);
 
         List<Opportunity> hotAccountsOpenOpps = [SELECT Id, Amount, StageName FROM Opportunity WHERE IsClosed = false AND AccountId in:hotAccounts];
 

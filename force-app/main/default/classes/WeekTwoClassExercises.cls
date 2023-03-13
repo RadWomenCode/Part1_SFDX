@@ -18,8 +18,6 @@ public with sharing class WeekTwoClassExercises {
         && signifies AND
         || signifies OR
 
-        //Ternary Operator short-hand for if-then-else statements
-
         */
 
         Boolean isGreater = 4 > 6;  // Our isGreater variable must be false, since 4 is not greater than 6
@@ -44,9 +42,6 @@ public with sharing class WeekTwoClassExercises {
         else {
             isBool = 'value is false'; 
         }
-
-        //Ternary operator example
-        String isBoolternany = bool ? 'value is true' : 'value is false';
 
         //Hopefully this gave you a quick look at the syntax
 
