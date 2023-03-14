@@ -70,8 +70,8 @@ private class PackageCoverageTests {
         a.Rating = 'Hot';
         insert a;
 
-        WeekFourClassExercises.getHotAccounts(2);
-        WeekFourClassExercises.forEachAccountsexample(2, 2);
+        WeekFourClassExercises.getHotAccounts();
+        WeekFourClassExercises.forEachAccountsexample();
         WeekFourHomework.soqlPractice();
         WeekFourHomework.forTheLoveOfForLoops();
      
