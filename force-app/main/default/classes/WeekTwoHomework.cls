@@ -37,8 +37,6 @@ public with sharing class WeekTwoHomework {
 
 
         // 2. Declare another boolean variable and write a comparison that evaluates to true, assign it to your variable
-
-        // 3. Bonus: Declare a variable that uses ternary operator
     }
 
     public static void introToLists() {
