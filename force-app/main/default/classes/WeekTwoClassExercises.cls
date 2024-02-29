@@ -6,31 +6,34 @@ public with sharing class WeekTwoClassExercises {
         //Conditionals and logical operators are an important part of coding.  You may already be familiar with them in concept from formula fields and other
         //declarative tools in Salesforce that use conditional logic.
 
-        /*Comparison operators to be familiar with are
-        == Two equals signs indicate you are comparing two values to see if they are the same
-        < less than
-        <= less than or equal to
-        >= greater than or equal to
-        != not equal (evaluates whether the two values are NOT Equal)  Sometimes you will see/hear the ! symbol called "bang"
-        for example, you could read the above as "bang equal" or "not equal"
+        /*
+            Comparison operators to be familiar with are
+            == Two equals signs indicate you are comparing two values to see if they are the same
+            < less than
+            <= less than or equal to
+            >= greater than or equal to
+            != not equal (evaluates whether the two values are NOT Equal)  Sometimes you will see/hear the ! symbol called "bang"
+            for example, you could read the above as "bang equal" or "not equal"
+    
+            Logical Operators allow you to build out the logic of complex comparisons
+            && signifies AND
+            || signifies OR
 
-        //Logical Operators allow you to build out the logic of complex comparisons
-        && signifies AND
-        || signifies OR
-
+			There are other more advanced operators like Ternary operators and Bitwise operators but for this course we will work with the ones above.            
+            
         */
 
         Boolean isGreater = 4 > 6;  // Our isGreater variable must be false, since 4 is not greater than 6
 
         Boolean isLess = 4 > 2;  //our isLess must be true, since 4 IS greater than 2
 
-        Boolean areEquivilant = (5 == 2 + 3);  //areEquivilant must be true, since 5 is equivilant to 2+3.  The parenthesis here aren't necessary, but do make the code more readable
-        //note that the single equals sign above is to assign a value to our boolean variable, whereas the double equals sign is a comparison operator
+        Boolean areEquivalent = (5 == 2 + 3);  //areEquivalent must be true, since 5 is equivalent to 2+3. The parenthesis here aren't necessary, 
+                                               //but do make the code more readable. Note that the single equals sign is to assign a value to our boolean variable, 
+                                               //whereas the double equals sign is a comparison operator
 
-        Boolean result = (5 > 2 && (10 == 5 * 2)); //result must be true since 5 is greater than 2 AND 10 is equivilant to 5 times 2
+        Boolean result = (5 > 2 && (10 == 5 * 2)); //result must be true since 5 is greater than 2 AND 10 is equivalent to 5 times 2
 
         Boolean anotherResult = 2 != 3;  //again, true since 2 does not equal 3
-
         
         Boolean bool = true;
 
@@ -44,7 +47,6 @@ public with sharing class WeekTwoClassExercises {
         }
 
         //Hopefully this gave you a quick look at the syntax
-
 
     }
 
