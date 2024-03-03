@@ -1,7 +1,7 @@
 public with sharing class WeekFiveHomework {
     
 	//Let's practice calling different methods by writing our very own methods. You will write and save methods in the space below
-    //that call the existing methods you see already written here.  Ready?  Let's Go!
+	//Note: There are existing pre-written methods at the bottom of this class that you can use to help with your own methods. Ready? Let's go!
 
 
     //Sample: Here is a public method that calls the getCitiesForExpansion below and prints the results to our debug log
@@ -29,6 +29,8 @@ public with sharing class WeekFiveHomework {
     //Hint:  If you're stuck, look back a the code in ClassExercises, getOpenOppsForHotAccounts method
     //  Print your results in the debug log.
 
+
+    // Pre-Written methods below this point that you can call
 
     //no arguments taken, will return the same thing every time
     public static List<String> getCitiesForExpansion() {
