@@ -25,7 +25,7 @@ public with sharing class WeekTwoClassExercises {
 
         Boolean isGreater = 4 > 6;  // Our isGreater variable must be false, since 4 is not greater than 6
 
-        Boolean isLess = 4 > 2;  //our isLess must be true, since 4 IS greater than 2
+        Boolean isLess = 2 < 4;  //our isLess must be true, since 2 is less than 4
 
         Boolean areEquivalent = (5 == 2 + 3);  //areEquivalent must be true, since 5 is equivalent to 2+3. The parenthesis here aren't necessary, 
                                                //but do make the code more readable. Note that the single equals sign is to assign a value to our boolean variable, 
