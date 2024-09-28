@@ -21,10 +21,9 @@ public with sharing class WeekTwoHomework {
         //since i is in fact greater than k (4>2), the boolean value is true.  If you run this method in Execute anonymous you can see the result
         System.debug('isBigger: ' + isBigger);
 
-
         //We will use these more next week when we discuss if/then Conditional constructs and control statements.
-        //You can find a complete list of operators here: https://developer.salesforce.com/docs/atlas.en-us.198.0.apexcode.meta/apexcode/langCon_apex_expressions_operators_understanding.htm?search_text=ternary
-
+        //You can find a complete list of operators here: 
+        //  https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_expressions_operators_understanding.htm
 
     }
 
