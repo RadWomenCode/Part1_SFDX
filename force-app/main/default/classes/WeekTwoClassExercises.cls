@@ -104,14 +104,13 @@ public with sharing class WeekTwoClassExercises {
         //we now have a set of the above cusines.  What's important to know is that they are not guaranteed to be in the same
         //order that we put them in: Sets are unordered
 
-
-        //And if we try and add a duplicate to the list?
-        //To start we have how many in the list?
-        System.debug('Size of our list before trying to re-add Balkan ' + cuisineTypes.size());
+        //And if we try and add a duplicate to the set?
+        //To start we have how many in the set?
+        System.debug('Size of our set before trying to re-add Balkan ' + cuisineTypes.size());
 
         cuisineTypes.add('Balkan');
 
-        System.debug('Size of our list after trying to re-add Balkan ' + cuisineTypes.size());
+        System.debug('Size of our set after trying to re-add Balkan ' + cuisineTypes.size());
 
         //Run this method and check the debug log, no change in size!  Sets are unique, but you won't get an error when you re-ad a duplicate element.
         //Under the hood, when you try to add a duplicate, you're replacing it, but with the very same value
@@ -152,8 +151,10 @@ public with sharing class WeekTwoClassExercises {
         //Let's make a list of Ids and then loop through, fetching the restaurant name.
         List<Integer> idList = new List<Integer>{ 1234, 6784, 89453 };
 
+        // for loops are just ways to "loop" through a collection. We will cover this in more detail in Week 3
         for (Integer i : idList) {
-            //When we use the get method on a map, and pass in the Id, we get back the value which is associated with that Id
+            //When we use the get method on a map, and pass in the Id, we get back the value which is associated with that Id.
+            //We will cover Maps and Methods in the next few weeks so don't worry if you don't fully understand yet.
             String restaurantName = restaurantsById.get(i);
             System.debug('restaurantName: ' + restaurantName);
         }

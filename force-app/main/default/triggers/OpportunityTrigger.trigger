@@ -1,4 +1,4 @@
-trigger OpportunityTrigger on Opportunity (before insert) {
+trigger OpportunityTrigger on Opportunity (after insert) {
 
     //When an Opportunity is inserted, check and see if this account has a rating of 'Hot'.  If not, make it 'Hot'
     //since we consider any account with an open opportunity as hot
