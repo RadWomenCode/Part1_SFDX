@@ -4,9 +4,8 @@ public with sharing class WeekFourClassExercises {
         //In this piece of sample code, we are printing the number of Hot accounts.
         //(This is a maximum.  IF we ask for 10, but there are only 2 Hot Accounts, you'll get 2 since we're limiting to 10)
         //An additional requirement is that we want to incude the Account Owner's email with the results
-        Integer numberOfAccounts = 10;
         List<Account> hotAccounts =
-            [SELECT Id, Name, OwnerId, Priority__c, Owner.Email, AnnualRevenue FROM Account WHERE Rating = 'Hot' ORDER BY AnnualRevenue DESC LIMIT :numberOfAccounts];
+            [SELECT Id, Name, OwnerId, Priority__c, Owner.Email, AnnualRevenue FROM Account WHERE Rating = 'Hot' ORDER BY AnnualRevenue DESC LIMIT 10];
         System.debug('How Many Hot accounts did we find? ' + hotAccounts.size());
     }
 
@@ -14,11 +13,10 @@ public with sharing class WeekFourClassExercises {
     //Let's look at the new For loop syntax we learned.  There are times when you might not know how many times you need to do something
     //in advance.  This is the perfect tool for those scenarios
     public static void forEachAccountsexample() {
-        Integer numberOfAccounts = 10;
         Integer numberOfOpps = 2;
         //Get all the HotAccounts using SOQL
         List<Account> hotAccounts =
-            [SELECT Id, Name, OwnerId, Priority__c, Owner.Email, AnnualRevenue FROM Account WHERE Rating = 'Hot' ORDER BY AnnualRevenue DESC LIMIT :numberOfAccounts];
+            [SELECT Id, Name, OwnerId, Priority__c, Owner.Email, AnnualRevenue FROM Account WHERE Rating = 'Hot' ORDER BY AnnualRevenue DESC LIMIT 10];
         System.debug('How Many Hot accounts did we find? ' + hotAccounts.size());
 
 
