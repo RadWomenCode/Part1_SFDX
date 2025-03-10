@@ -30,6 +30,8 @@ public with sharing class WeekTwoHomework {
     public static void conditionalsExercise() {
 
         Boolean result;
+        
+        //You do this part!
 
         // 1. Write a comparison statement that evauates to false and assign the result to our result variable
         //Don't forget to maintain indentation!

@@ -9,7 +9,7 @@ public with sharing class WeekThreeClassExercises {
         // Lets start by creating a new Account record
         Account a = new Account();
 
-        //Let's use dot notation to assing some values to key fields
+        //Let's use dot notation to assign some values to key fields
         a.Name = 'Pok Pok';  //a famous Portland restaurant! :)
         a.BillingCity = 'Portland';
         a.BillingState = 'OR';
@@ -78,11 +78,10 @@ public with sharing class WeekThreeClassExercises {
 		// This is a SOQL query to recieve records from Salesforce.  We'll be covering these soon!!
         List<Opportunity> tenOpenOpps = [SELECT Id, Name, Amount FROM Opportunity WHERE IsClosed = false LIMIT 10];
 
-        //Let's look at how we can iterate, or loop through this list and inspect or interact with each of the accounts
+        //Let's look at how we can iterate, or loop through this list and inspect or interact with each of the opportunities
         for (Opportunity o : tenOpenOpps) {
             System.debug('Opp in our loop : ' + o.Name);
         }
-
 
     }
 

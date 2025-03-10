@@ -9,6 +9,16 @@ public with sharing class WeekFourClassExercises {
         System.debug('How Many Hot accounts did we find? ' + hotAccounts.size());
     }
 
+    public static void getHotAccountsWithBindVariables() {
+        //In this piece of sample code, we are introducing the concept of a bind variable. This method is identical to getHotAccounts()
+        //except in this situation we are creating a variable called numberOfAccounts and adding that as a bind varible to our query. 
+        //That means we can change the number of accounts displayed without changing any of the code in the method
+        Integer numberOfAccounts = 10;
+        List<Account> hotAccounts =
+            [SELECT Id, Name, OwnerId, Priority__c, Owner.Email, AnnualRevenue FROM Account WHERE Rating = 'Hot' ORDER BY AnnualRevenue DESC LIMIT :numberOfAccounts];
+        System.debug('How Many Hot accounts did we find? ' + hotAccounts.size());
+    }
+
   
     //Let's look at the new For loop syntax we learned.  There are times when you might not know how many times you need to do something
     //in advance.  This is the perfect tool for those scenarios
